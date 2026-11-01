@@ -1,0 +1,6 @@
+dist/
+*.zip
+*.sha256
+befree-gantry/custom/
+__pycache__/
+.DS_Store

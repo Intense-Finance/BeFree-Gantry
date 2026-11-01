@@ -1,0 +1,148 @@
+details:
+  name: BeFree Gantry
+  version: '1.0.0'
+  icon: industry
+  date: 'November 1, 2026'
+  author:
+    name: Intense Finance
+    email: if@if.finance
+    link: https://if.finance/
+
+  documentation:
+    link: https://github.com/Intense-Finance/BeFree-Gantry#readme
+
+  support:
+    link: https://github.com/Intense-Finance/BeFree-Gantry/issues
+
+  copyright: '(C) 2026 Intense Finance. Based on Hydrogen (C) 2007 - 2022 Tiger12, LLC (originally RocketTheme, LLC).'
+  license: GPLv3
+  description: BeFree Gantry, the BeFree industrial x if.finance neon meld for Gantry 5
+  images:
+    thumbnail: admin/images/presets/meld-neon.png
+    preview: admin/images/presets/meld-neon.png
+
+configuration:
+  gantry:
+    platform: wordpress
+    engine: nucleus
+
+  theme:
+    parent: befree-gantry
+    base: gantry-theme://common
+    file: gantry-theme://includes/theme.php
+    class: \Gantry\Framework\Theme
+    textdomain: befree-gantry
+
+  # Bundled fonts (SIL OFL 1.1, see fonts/OFL.txt). Latin subset, woff2 only.
+  # Pick them in Styles > Base. To load from Google Fonts instead, choose the
+  # Google font of the same name in the Gantry font picker.
+  fonts:
+    barlowcondensed:
+      500: 'gantry-theme://fonts/barlow-condensed/BarlowCondensed-Medium'
+      600: 'gantry-theme://fonts/barlow-condensed/BarlowCondensed-SemiBold'
+      700: 'gantry-theme://fonts/barlow-condensed/BarlowCondensed-Bold'
+    outfit:
+      400: 'gantry-theme://fonts/outfit/Outfit-Variable'
+      500: 'gantry-theme://fonts/outfit/Outfit-Variable'
+      600: 'gantry-theme://fonts/outfit/Outfit-Variable'
+
+  css:
+    compiler: \Gantry\Component\Stylesheet\ScssCompiler
+    options:
+      compatibility: '5.5'
+      deprecations: true
+    paths:
+      - gantry-theme://scss
+      - gantry-engine://scss
+    files:
+      - befree-gantry
+      - befree-gantry-wordpress
+      - custom
+    persistent:
+      - befree-gantry
+    overrides:
+      - befree-gantry-wordpress
+      - custom
+
+  dependencies:
+    gantry: '5.5'
+
+  block-variations:
+    Box Variations:
+      box1: Box 1
+      box2: Box 2
+      box3: Box 3
+      box4: Box 4
+      bf-card: BeFree Card
+      bf-navy: BeFree Navy Panel
+    Effects:
+      shadow: Shadow 1
+      shadow2: Shadow 2
+      rounded: Rounded
+      square: Square
+      bf-glow: Neon Glow on Hover
+      bf-hazard: Hazard Stripe Top
+    Utility:
+      disabled: Disabled
+      align-right: Align Right
+      align-left: Align Left
+      center: Center
+      full-width: Full Width
+      equal-height: Equal Height
+      nomarginall: No Margin
+      nopaddingall: No Padding
+
+chrome:
+  gantry:
+    before_widget: <div id="%1$s" class="widget %2$s">
+    after_widget: </div>
+    before_title: <h2 class="widgettitle">
+    after_title: </h2>
+
+admin:
+  styles:
+    section:
+      - header
+      - showcase
+      - subfeature
+    core:
+      - base
+      - befree
+  content:
+    general:
+      - wpautop
+    blog:
+      - content
+      - heading
+      - featured-image
+      - title
+      - meta-date
+      - meta-author
+      - meta-comments
+      - meta-categories
+      - meta-tags
+      - read-more
+    single:
+      - featured-image
+      - title
+      - meta-date
+      - meta-author
+      - meta-comments
+      - meta-categories
+      - meta-tags
+    page:
+      - featured-image
+      - title
+      - meta-date
+      - meta-author
+    archive:
+      - content
+      - heading
+      - featured-image
+      - title
+      - meta-date
+      - meta-author
+      - meta-comments
+      - meta-categories
+      - meta-tags
+      - read-more

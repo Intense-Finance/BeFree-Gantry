@@ -1,0 +1,35 @@
+version: 2
+
+preset:
+  image: 'gantry-admin://images/layouts/befree-right-sidebar.png'
+  name: default
+
+layout:
+  /header/:
+    - [logo 30, position-header 70]
+
+  /navigation/:
+    - menu
+
+  /container-main/:
+    -
+      - mainbar 70:
+          - position-breadcrumbs
+          - system-messages
+          - system-content
+      - sidebar 30:
+          - position-sidebar
+          - sister-site
+
+  /footer/:
+    - position-footer
+    - [copyright 40, spacer 30, branding 30]
+
+  offcanvas:
+    - mobile-menu
+
+structure:
+  sidebar:
+    subtype: aside
+    block:
+      fixed: 1

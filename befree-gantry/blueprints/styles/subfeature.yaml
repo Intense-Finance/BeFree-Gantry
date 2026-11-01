@@ -1,0 +1,15 @@
+name: Subfeature Colors
+description: Subfeature colors for the BeFree Gantry theme
+type: section
+
+form:
+  fields:
+
+    background:
+      type: input.colorpicker
+      label: Background
+      default: "#070d14"
+    text-color:
+      type: input.colorpicker
+      label: Text
+      default: "#e7eef6"

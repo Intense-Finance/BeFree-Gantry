@@ -1,0 +1,49 @@
+version: 2
+
+preset:
+  image: 'gantry-admin://images/layouts/befree-magazine.png'
+  name: home
+
+layout:
+  /header/:
+    - [logo 30, position-header 70]
+
+  /navigation/:
+    - menu
+
+  /showcase/:
+    - custom-1
+
+  /feature/:
+    - [position-feature-1 33.3, position-feature-2 33.3, position-feature-3 33.4]
+
+  /container-main/:
+    -
+      - mainbar 70:
+          - system-messages
+          - system-content
+      - sidebar 30:
+          - position-sidebar
+          - sister-site
+
+  /subfeature/:
+    - position-subfeature
+
+  /footer/:
+    - position-footer
+    - [copyright 40, spacer 30, branding 30]
+
+  offcanvas:
+    - mobile-menu
+
+structure:
+  sidebar:
+    subtype: aside
+    block:
+      fixed: 1
+
+content:
+  custom-1:
+    title: 'BeFree Hero'
+    attributes:
+      html: "<div class=\"bf-eyebrow\">BeFree Gantry <span class=\"bf-live-dot\"></span> <span class=\"bf-live\">Live</span></div>\n<h1 class=\"bf-hero-title\">Dark industrial <span class=\"bf-live\">neon</span> for Gantry 5</h1>\n<p>BeFree structure, navy and gold, meets if.finance lime and cyan. Edit this block in Gantry 5 &gt; Layout &gt; Showcase.</p>\n<div class=\"bf-stats\"><div><b>6</b>Style presets</div><div><b>6</b>Layouts</div><div><b>GPLv3</b>License</div></div>\n<p><a class=\"bf-btn bf-btn-gold\" href=\"#g-mainbar\">Latest posts</a> <a class=\"bf-btn bf-btn-ghost\" href=\"https://github.com/Intense-Finance/BeFree-Gantry\">Theme on GitHub</a></p>"

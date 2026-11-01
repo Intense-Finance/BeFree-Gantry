@@ -1,0 +1,203 @@
+// BeFree Gantry: the BeFree industrial x if.finance neon "meld".
+// Copyright (C) 2026 Intense Finance. GNU GPL v3 or later.
+//
+// Roles: $accent-color-1 = "live" (lime: active, LIVE dots, highlights),
+//        $accent-color-2 = "link" (cyan: links, hover glow, ghost buttons),
+//        $befree-* = BeFree structure (cards, lines, gold actions, navy panels).
+//
+// CHART RULE: nothing here targets iframes, .tradingview-widget-container,
+// tv-* classes or any chart internals. Widget boxes get borders through
+// box-shadow only, so no chart container changes size. The single
+// TradingView rule is the copyright-link color rule at the bottom.
+
+$bf-heading: get-font-family($base-heading-font);
+$bf-body: get-font-family($base-body-font);
+$bf-is-light: $befree-variant == 'light';
+$bf-is-industrial: $befree-variant == 'industrial';
+$bf-sharp: if($befree-radius == 0, 0, min($befree-radius, 8px));
+$bf-btn-radius: if($befree-radius == 0, 0, 6px);
+
+:root {
+    --bf-live: #{$accent-color-1};
+    --bf-link: #{$accent-color-2};
+    --bf-gold: #{$befree-gold};
+    --bf-gold-text: #{$befree-gold-text};
+    --bf-gold-ink: #{$befree-gold-ink};
+    --bf-card: #{$befree-card};
+    --bf-raised: #{$befree-raised};
+    --bf-line: #{$befree-line};
+    --bf-muted: #{$befree-muted};
+    --bf-navy: #{$befree-navy};
+    --bf-paper: #{$befree-paper};
+    --bf-ink: #{$befree-ink};
+    --bf-text: #{$base-text-color};
+    --bf-bg: #{$base-background};
+    --bf-radius: #{$befree-radius};
+}
+
+// ---------- Base ----------
+a { color: $accent-color-2; &:hover { color: $accent-color-1; } }
+h1, h2, h3, h4, h5, h6, strong { color: $base-text-color; }
+h1, h2, h3, h4, h5, h6 { letter-spacing: .02em; }
+::selection { background: $accent-color-1; color: $base-background; }
+
+// ---------- Header + navigation ----------
+#g-header { box-shadow: inset 0 -1px 0 $befree-line; }
+#g-navigation {
+    box-shadow: inset 0 -1px 0 $befree-line, inset 0 1px 0 $befree-line;
+    a { color: $navigation-text-color; &:hover { color: $accent-color-2; } }
+}
+.g-main-nav {
+    .g-toplevel > li > .g-menu-item-container .g-menu-item-title {
+        font-family: $bf-heading; font-weight: 600; letter-spacing: .1em; text-transform: uppercase;
+    }
+    .g-toplevel > li.active > .g-menu-item-container,
+    .g-toplevel > li.g-selected > .g-menu-item-container { box-shadow: inset 0 -2px 0 $accent-color-1; }
+    .g-toplevel > li.active > .g-menu-item-container .g-menu-item-title { color: $accent-color-1; }
+    .g-toplevel > li:not(.active):hover > .g-menu-item-container .g-menu-item-title { color: $accent-color-2; }
+    .g-dropdown { box-shadow: 0 0 0 1px $befree-line, 0 12px 24px rgba(0, 0, 0, .45); border-radius: 0 0 $bf-sharp $bf-sharp; }
+    .g-sublevel > li > .g-menu-item-container .g-menu-item-title { font-family: $bf-body; }
+    .g-sublevel > li:hover > .g-menu-item-container .g-menu-item-title { color: $accent-color-2; }
+}
+#g-offcanvas { box-shadow: inset -1px 0 0 $befree-line; }
+
+// ---------- Buttons ----------
+.button, input[type="submit"], button.button, .read-more.button, .search-submit {
+    background: $befree-gold; color: $befree-gold-ink; border: 1px solid $befree-gold; border-radius: $bf-btn-radius;
+    font-family: $bf-heading; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; box-shadow: none;
+    &:hover, &:focus { background: transparent; color: $accent-color-2; border-color: $accent-color-2; }
+    &:active { background: darken($befree-gold, 6%); color: $befree-gold-ink; }
+}
+.bf-btn { display: inline-block; font: 700 15px/1.2 $bf-heading; letter-spacing: .12em; text-transform: uppercase; padding: 11px 20px; border-radius: $bf-btn-radius; border: 1px solid; text-decoration: none; }
+.bf-btn-gold { background: $befree-gold; border-color: $befree-gold; color: $befree-gold-ink !important; }
+.bf-btn-ghost { background: transparent; border-color: $accent-color-2; color: $accent-color-2 !important; }
+.bf-btn-neon { background: transparent; border-color: $accent-color-1; color: $accent-color-1 !important; box-shadow: 0 0 18px rgba($accent-color-1, .25); }
+.bf-btn:hover { box-shadow: 0 0 16px rgba($accent-color-2, .35); }
+
+// ---------- Forms ----------
+input[type="text"], input[type="email"], input[type="search"], input[type="url"], input[type="password"], textarea, select, .search-field {
+    background: $befree-card; color: $base-text-color; border: 1px solid $befree-line; border-radius: $bf-btn-radius;
+    &:focus { border-color: $accent-color-2; box-shadow: 0 0 0 1px $accent-color-2; outline: 0; }
+}
+
+// ---------- Posts: list (Gantry content array + WP loop) ----------
+.g-content-array .g-array-item, .tease {
+    background: $befree-card; box-shadow: 0 0 0 1px $befree-line; border-radius: $befree-radius; transition: box-shadow .2s;
+    &:hover { box-shadow: 0 0 0 1px $accent-color-2, 0 0 22px rgba($accent-color-2, .18); }
+}
+.g-content-array .g-array-item-image img, .tease-featured-image img, .post-thumbnail img { border-radius: $bf-sharp; }
+.g-item-title, .g-item-title a, .tease .entry-title a { color: $base-text-color; font-family: $bf-heading; font-weight: 600; letter-spacing: .02em; }
+.g-item-title a:hover, .tease .entry-title a:hover { color: $accent-color-1; }
+.g-array-item-details, .g-array-item-details a, .entry-meta, .entry-meta a, .meta-prefix { color: $befree-muted; }
+.g-array-item-details .g-array-item-category a, .entry-meta .single-cat a, .meta-category-link { color: $befree-gold-text; }
+.g-array-item-text, .post-excerpt { color: $befree-paper; @if $bf-is-light { color: $base-text-color; } }
+
+// ---------- Single posts / pages ----------
+.entry-header .entry-title { font-family: $bf-heading; font-weight: 700; letter-spacing: .02em; text-transform: uppercase; line-height: 1; }
+.entry-content {
+    h2, h3, h4 { font-family: $bf-heading; font-weight: 600; letter-spacing: .03em; padding-left: 12px; border-left: 3px solid $befree-gold; }
+    a { color: $accent-color-2; &:hover { color: $accent-color-1; } }
+    img { border-radius: $bf-sharp; }
+    blockquote { background: $befree-navy; border: 1px solid $befree-line; border-left: 3px solid $accent-color-2; border-radius: $befree-radius; padding: 18px 20px; margin: 24px 0;
+        @if $bf-is-light { color: $befree-paper; background: #ffffff; } }
+    table:not([class*="tradingview"]) td, table:not([class*="tradingview"]) th { border-color: $befree-line; }
+}
+.bf-dropcap > p:first-child:first-letter, .entry-content > p.bf-dropcap:first-letter {
+    font: 700 64px/.8 $bf-heading; float: left; color: $accent-color-1; margin: 8px 10px 0 0;
+}
+.page-header { box-shadow: inset 0 -1px 0 $befree-line; }
+
+// ---------- WordPress widgets (sidebar, feature rows, footer) ----------
+#g-page-surround .widget {
+    background: $befree-card; box-shadow: 0 0 0 1px $befree-line; border-radius: $befree-radius;
+    a { color: $befree-paper; &:hover { color: $accent-color-2; } }
+    @if $bf-is-light { a { color: $base-text-color; } }
+}
+#g-page-surround .widgettitle, #g-page-surround .widget h2 {
+    font-family: $bf-heading; font-weight: 600; font-size: 1.15rem; letter-spacing: .12em; text-transform: uppercase; color: $base-text-color; margin-top: 0;
+}
+// Inner padding only for core text widgets. Custom HTML and block widgets
+// (where chart embeds live) keep their exact width; only their title is padded.
+#g-page-surround .widget:not(.widget_custom_html):not(.widget_block) { padding: 14px 16px; }
+#g-page-surround .widget.widget_custom_html > .widgettitle, #g-page-surround .widget.widget_block > .widgettitle { padding: 14px 16px 0; }
+#g-page-surround .widget ul { list-style: none; margin: 0; padding: 0;
+    li { padding: 8px 0; border-top: 1px solid $befree-line; &:first-child { border-top: 0; } } }
+#g-page-surround .platform-content .entries .tease, .tease { padding: 16px 20px 20px; margin: 0 0 1.5rem; }
+#g-page-surround .widget + .widget { margin-top: 1rem; }
+
+// ---------- Footer ----------
+#g-footer {
+    box-shadow: inset 0 1px 0 $befree-line;
+    h1, h2, h3, h4, h5, h6, .widgettitle { color: $befree-paper; font-family: $bf-heading; letter-spacing: .08em; text-transform: uppercase;
+        @if $bf-is-light { color: #e7eef6; } }
+    a { color: $footer-text-color; &:hover { color: $accent-color-2; } }
+    .g-copyright { letter-spacing: .12em; text-transform: uppercase; font-size: .8rem; }
+}
+
+// ---------- Utility components (use in Custom HTML blocks) ----------
+.bf-eyebrow { font: 600 12px/1.3 $bf-body; letter-spacing: .16em; text-transform: uppercase; color: $befree-gold-text; }
+.bf-live { color: $accent-color-1; }
+.bf-live-dot { display: inline-block; width: 8px; height: 8px; border-radius: 50%; background: $accent-color-1; box-shadow: 0 0 8px $accent-color-1; vertical-align: middle; }
+.bf-card { background: $befree-card; border: 1px solid $befree-line; border-radius: $befree-radius; padding: 16px; }
+.bf-panel { background: $befree-navy; border: 1px solid $befree-line; border-left: 3px solid $accent-color-2; border-radius: $befree-radius; padding: 18px 20px; color: #e7eef6; }
+.bf-section-title { display: flex; align-items: center; gap: 14px; margin: 30px 0 14px;
+    h2, .bf-h { font: 700 26px/1.1 $bf-heading; text-transform: uppercase; letter-spacing: .08em; margin: 0; }
+    span { color: $accent-color-1; }
+    &:after { content: ""; flex: 1; height: 1px; background: linear-gradient(90deg, $befree-gold, $befree-line 30%, transparent); }
+}
+.bf-stats { display: flex; flex-wrap: wrap; gap: 22px;
+    > div { border-top: 1px solid $befree-gold; padding-top: 6px; font-size: 12px; color: $befree-muted; letter-spacing: .12em; text-transform: uppercase; }
+    b { display: block; color: $base-text-color; font: 600 20px/1.2 $bf-heading; letter-spacing: .04em; }
+}
+.pn-table { width: 100%; border-collapse: collapse;
+    td { border-top: 1px solid $befree-line; padding: 10px; vertical-align: top; }
+    td:first-child { color: $befree-gold-text; font: 600 16px/1.3 $bf-heading; letter-spacing: .08em; text-transform: uppercase; width: 38%; }
+}
+.bf-pills { display: flex; flex-wrap: wrap; gap: 8px;
+    a { border: 1px solid $befree-line; border-radius: 999px; padding: 4px 13px; font-size: 13px; color: $befree-paper; text-decoration: none;
+        @if $bf-is-light { color: $base-text-color; }
+        &:hover, &.hot { border-color: $accent-color-2; color: $accent-color-2; } }
+}
+
+// ---------- Block variations (theme.yaml) ----------
+.bf-card > .g-content, .g-content.bf-card { background: $befree-card; box-shadow: 0 0 0 1px $befree-line; border-radius: $befree-radius; }
+.bf-navy > .g-content, .g-content.bf-navy { background: $befree-navy; box-shadow: 0 0 0 1px $befree-line; border-radius: $befree-radius; color: #e7eef6; }
+.bf-glow > .g-content { transition: box-shadow .2s; &:hover { box-shadow: 0 0 0 1px $accent-color-2, 0 0 24px rgba($accent-color-2, .18); } }
+.bf-hazard > .g-content { position: relative; &:before { content: ""; position: absolute; left: 0; right: 0; top: 0; height: 6px; background: repeating-linear-gradient(-45deg, $befree-gold 0 10px, $befree-ink 10px 20px); } }
+
+// ---------- Industrial look (Styles > BeFree Meld > Look = Industrial) ----------
+@if $bf-is-industrial {
+    body, #g-page-surround {
+        background-color: $base-background;
+        background-image: repeating-linear-gradient(0deg, transparent 0 39px, rgba($befree-line, .18) 39px 40px),
+                          repeating-linear-gradient(90deg, transparent 0 39px, rgba($befree-line, .18) 39px 40px);
+    }
+    #g-header:before { content: ""; display: block; height: 10px; background: repeating-linear-gradient(-45deg, $befree-gold 0 14px, #050505 14px 28px); }
+    // Chamfer only text widgets; Custom HTML / block widgets (chart embeds) stay square and unclipped.
+    #g-page-surround .widget.widget_custom_html, #g-page-surround .widget.widget_block { border-radius: 0; }
+    .g-content-array .g-array-item, .tease, #g-page-surround .widget:not(.widget_custom_html):not(.widget_block), .bf-card, .entry-content blockquote {
+        border-radius: 0; clip-path: polygon(0 0, calc(100% - 18px) 0, 100% 18px, 100% 100%, 18px 100%, 0 calc(100% - 18px));
+        box-shadow: 0 0 0 2px $befree-line;
+    }
+    .g-content-array .g-array-item-image img, .tease-featured-image img { border-radius: 0; filter: grayscale(.55) contrast(1.15); transition: filter .2s; }
+    .g-content-array .g-array-item:hover .g-array-item-image img, .tease:hover .tease-featured-image img { filter: none; }
+    .button, input[type="submit"], .bf-btn { border-radius: 0; clip-path: polygon(0 0, calc(100% - 10px) 0, 100% 10px, 100% 100%, 10px 100%, 0 calc(100% - 10px)); }
+    .g-main-nav .g-toplevel > li.active > .g-menu-item-container { background: $accent-color-1; box-shadow: none; border-radius: 0;
+        .g-menu-item-title { color: #050505; } }
+    #g-page-surround .widgettitle, .bf-section-title h2, .bf-section-title .bf-h { display: inline-block; background: $befree-gold; color: $befree-gold-ink; padding: 2px 12px; }
+    .bf-section-title span { color: #050505; }
+    .bf-stamp { display: inline-block; }
+}
+.bf-stamp { display: none; font: 700 13px/1.4 $bf-heading; letter-spacing: .2em; color: $accent-color-2; border: 2px solid $accent-color-2; padding: 2px 8px; transform: rotate(-3deg); }
+
+// ---------- TradingView: copyright link color only (do not add other chart rules) ----------
+.tradingview-widget-copyright, .tradingview-widget-copyright a, .tradingview-widget-copyright .blue-text { color: $footer-text-color !important; }
+.tradingview-widget-copyright a:hover .blue-text { color: $accent-color-1 !important; }
+
+// ---------- Text logo ----------
+#g-header .gantry-logo, #g-header a.gantry-logo, .gantry-logo { font: 700 30px/1 $bf-heading; letter-spacing: .06em; text-transform: uppercase; color: $header-text-color; text-decoration: none;
+    &:hover { color: $accent-color-1; } }
+
+// ---------- Magazine hero (layouts/home.yaml custom particle) ----------
+.bf-hero-title { font: 700 clamp(2.2rem, 5vw, 3.6rem)/1 $bf-heading; text-transform: uppercase; letter-spacing: .02em; margin: .4rem 0 1rem; }
+#g-showcase .bf-stats { margin: 1.2rem 0; }

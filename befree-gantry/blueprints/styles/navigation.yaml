@@ -1,0 +1,20 @@
+name: Navigation Colors
+description: Navigation colors for the BeFree Gantry theme
+type: section
+
+form:
+  fields:
+
+    background:
+      type: input.colorpicker
+      label: Background
+      default: "#08182e"
+    text-color:
+      type: input.colorpicker
+      label: Text
+      default: "#e7eef6"
+    overlay:
+      type: input.colorpicker
+      label: Overlay
+      description: Set the color of the page overlay when the certain menu modes are active.
+      default: "rgba(0, 0, 0, 0.4)"

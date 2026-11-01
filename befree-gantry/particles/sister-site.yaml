@@ -1,0 +1,109 @@
+name: Sister Site
+description: 'BeFree Gantry sister-site card: ties two separate websites together with plain links (no scripts, no tracking, no shared login).'
+type: particle
+icon: fa-link
+
+configuration:
+  caching:
+    type: static
+
+form:
+  fields:
+    enabled:
+      type: input.checkbox
+      label: Enabled
+      description: Globally enable the particle.
+      default: true
+
+    eyebrow:
+      type: input.text
+      label: Eyebrow
+      description: Small label above the card.
+      default: 'Sister site'
+
+    pair_left:
+      type: input.text
+      label: Pair, left name
+      default: 'Intense Finance'
+
+    pair_right:
+      type: input.text
+      label: Pair, right name
+      default: 'Slopcore'
+
+    title:
+      type: input.text
+      label: Title
+      description: 'Big wordmark. Use the Title Accent field for the neon tail.'
+      default: 'SLOPCORE'
+
+    title_accent:
+      type: input.text
+      label: Title Accent
+      description: 'Neon (accent 1) tail after the title, e.g. .ARMY'
+      default: '.ARMY'
+
+    url:
+      type: input.text
+      label: Sister Site URL
+      description: 'Link for the title and the URL chip. Plain link, no tracking parameters are added.'
+      default: 'https://slopcore.army/'
+
+    url_label:
+      type: input.text
+      label: URL Chip Text
+      description: 'Leave empty to hide the chip.'
+      default: 'slopcore.army'
+
+    text:
+      type: textarea.textarea
+      label: Text
+      description: 'Short tagline. Plain text.'
+      default: 'A separate site from Intense Finance.'
+
+    buttons:
+      type: collection.list
+      array: true
+      label: Buttons
+      description: Buttons shown under the text.
+      value: text
+      ajax: true
+      fields:
+        .text:
+          type: input.text
+          label: Text
+        .link:
+          type: input.text
+          label: Link
+        .style:
+          type: select.select
+          label: Style
+          default: gold
+          options:
+            gold: Gold (primary)
+            ghost: Cyan ghost
+            neon: Lime neon
+        .target:
+          type: select.select
+          label: Target
+          default: _self
+          options:
+            _self: Same window
+            _blank: New window
+
+    note:
+      type: input.text
+      label: Footnote
+      description: 'Small print under the buttons. Leave empty to hide.'
+      default: 'Separate site · separate account'
+
+    hazard:
+      type: input.checkbox
+      label: Hazard Stripe
+      description: Show the gold and black stripe along the top edge.
+      default: true
+
+    css:
+      type: input.text
+      label: Extra CSS Classes
+      default: ''

@@ -1,0 +1,23 @@
+enabled: true
+eyebrow: 'Sister site'
+pair_left: 'Intense Finance'
+pair_right: 'Slopcore'
+title: 'SLOPCORE'
+title_accent: '.ARMY'
+url: 'https://slopcore.army/'
+url_label: 'slopcore.army'
+text: 'A separate site from Intense Finance.'
+buttons:
+  -
+    text: 'Visit slopcore.army'
+    link: 'https://slopcore.army/'
+    style: gold
+    target: _self
+  -
+    text: 'Read: SLOPCORE'
+    link: 'https://if.finance/slopcore/'
+    style: ghost
+    target: _self
+note: 'Separate site · separate account'
+hazard: true
+css: ''

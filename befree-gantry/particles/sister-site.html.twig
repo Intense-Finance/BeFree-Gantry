@@ -1,0 +1,35 @@
+{#
+ # BeFree Gantry: Sister Site particle.
+ # Copyright (C) 2026 Intense Finance. GNU GPL v3 or later.
+ # Plain <a> links only: no scripts, no tracking pixels, no shared login.
+ #}
+{% extends '@nucleus/partials/particle.html.twig' %}
+
+{% block particle %}
+    {% set siteUrl = particle.url|default('') %}
+    <div class="bf-sister{% if particle.hazard %} bf-sister-hazard{% endif %}{% if particle.css %} {{ particle.css|e }}{% endif %}">
+        {% if particle.eyebrow %}<div class="bf-sister-eyebrow">{{ particle.eyebrow|e }} <i></i></div>{% endif %}
+        {% if particle.pair_left or particle.pair_right %}
+            <div class="bf-sister-pair"><b>{{ particle.pair_left|e }}</b> <span>&times;</span> <b>{{ particle.pair_right|e }}</b></div>
+        {% endif %}
+        {% if particle.title %}
+            {% if siteUrl %}
+                <a class="bf-sister-name" href="{{ siteUrl|e('html_attr') }}">{{ particle.title|e }}{% if particle.title_accent %}<em>{{ particle.title_accent|e }}</em>{% endif %}</a>
+            {% else %}
+                <span class="bf-sister-name">{{ particle.title|e }}{% if particle.title_accent %}<em>{{ particle.title_accent|e }}</em>{% endif %}</span>
+            {% endif %}
+        {% endif %}
+        {% if particle.text %}<p class="bf-sister-tag">{{ particle.text|e|nl2br }}</p>{% endif %}
+        {% if particle.url_label %}<span class="bf-sister-url">{{ particle.url_label|e }}</span>{% endif %}
+        {% if particle.buttons %}
+            <div class="bf-sister-btns">
+                {% for button in particle.buttons %}
+                    {% if button.text and button.link %}
+                        <a class="bf-sister-btn{% if button.style == 'ghost' %} bf-sister-ghost{% elseif button.style == 'neon' %} bf-sister-neon{% endif %}" href="{{ button.link|e('html_attr') }}"{% if button.target == '_blank' %} target="_blank" rel="noopener noreferrer"{% endif %}>{{ button.text|e }}</a>
+                    {% endif %}
+                {% endfor %}
+            </div>
+        {% endif %}
+        {% if particle.note %}<p class="bf-sister-note">{{ particle.note|e }}</p>{% endif %}
+    </div>
+{% endblock %}

@@ -1,0 +1,63 @@
+name: BeFree Meld
+description: BeFree industrial palette, shape and variant for the BeFree Gantry theme
+type: core
+
+form:
+  fields:
+
+    variant:
+      type: select.select
+      label: Look
+      description: 'Standard = BeFree cards with neon accents. Industrial = hazard stripes, blueprint grid, chamfered cards and gold-plate titles. Light = light paper surfaces.'
+      default: standard
+      options:
+        standard: Standard
+        industrial: Industrial
+        light: Light
+
+    radius:
+      type: input.text
+      label: Card Radius
+      description: 'Corner radius for cards and panels (BeFree default 14px; Industrial uses 0px).'
+      default: "14px"
+    gold:
+      type: input.colorpicker
+      label: Gold (buttons, rules)
+      default: "#d7c785"
+    gold-text:
+      type: input.colorpicker
+      label: Gold Text (eyebrows, keys)
+      description: 'Gold used as text. Keep 4.5:1 contrast against Card.'
+      default: "#d7c785"
+    gold-ink:
+      type: input.colorpicker
+      label: Gold Button Text
+      default: "#1c1708"
+    card:
+      type: input.colorpicker
+      label: Card
+      default: "#101820"
+    raised:
+      type: input.colorpicker
+      label: Raised (image wells)
+      default: "#162232"
+    line:
+      type: input.colorpicker
+      label: Line (borders)
+      default: "#2a3a4e"
+    muted:
+      type: input.colorpicker
+      label: Muted Text
+      default: "#8ea0b5"
+    navy:
+      type: input.colorpicker
+      label: Navy Panel
+      default: "#0a2344"
+    paper:
+      type: input.colorpicker
+      label: Paper (nav labels, secondary text)
+      default: "#e7eef6"
+    ink:
+      type: input.colorpicker
+      label: Ink (utility bars)
+      default: "#070d14"

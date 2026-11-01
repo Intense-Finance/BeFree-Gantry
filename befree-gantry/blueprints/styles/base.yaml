@@ -1,0 +1,23 @@
+name: Base Styles
+description: Base styles for the BeFree Gantry theme
+type: core
+
+form:
+  fields:
+
+    background:
+      type: input.colorpicker
+      label: Base Background
+      default: "#050505"
+    text-color:
+      type: input.colorpicker
+      label: Base Text Color
+      default: "#f1f1ec"
+    body-font:
+      type: input.fonts
+      label: Body Font
+      default: 'outfit, sans-serif'
+    heading-font:
+      type: input.fonts
+      label: Heading Font
+      default: 'barlowcondensed, sans-serif'
