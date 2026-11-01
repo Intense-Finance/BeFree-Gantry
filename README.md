@@ -5,6 +5,7 @@ A dark, industrial **Gantry 5** theme for WordPress. It blends the **BeFree** lo
 * Version: **1.0.0**
 * Requires: WordPress 6.0+, PHP 7.4+, and the free **[Gantry 5 Framework](https://gantry.org/) plugin** (5.6.x)
 * License: **GNU GPL v3 or later** (see [License](#license))
+* Read the launch story on if.finance: [BeFree Gantry: a dark, industrial WordPress theme](https://if.finance/befree-gantry-wordpress-theme/)
 
 ![BeFree Gantry: meld home, desktop](docs/previews/meld-home-desktop.png)
 
