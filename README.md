@@ -1,5 +1,7 @@
 # BeFree Gantry
 
+Made by Intense Finance (https://if.finance)
+
 A dark, industrial **Gantry 5** theme for WordPress. It blends the **BeFree** look (navy, gold, Barlow Condensed, chamfered "industrial" cards) with the **if.finance** neon palette (lime "live" accents and cyan links).
 
 * Version: **1.1.0**

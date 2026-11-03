@@ -11,6 +11,9 @@ All notable changes to BeFree Gantry are documented here. This project uses [Sem
 ### Removed
 - **Cyan Night** (the old preset4). It was the most redundant dark preset: the same lime-and-cyan accents as Meld Neon, with cyan leading. The preset4 id is kept, so an outline that points at preset4 still resolves. Colors already saved on an outline are not rewritten. Light Paper is unchanged.
 
+### Changed
+- Theme author is Intense Finance (https://if.finance) in the WordPress theme header, the Gantry About details, and the PHP file headers. The original Hydrogen copyright lines stay.
+
 ### Notes
 - Existing layout particles are untouched, including the homepage hero, sidebars, Sister Site block and `system-content` (where the stock charts live). An empty Slideshow section produces no markup. Outlines already saved in `custom/` are not edited by the theme update.
 
