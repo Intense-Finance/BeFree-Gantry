@@ -24,6 +24,9 @@ preset1:
       background: '#08182e'
       text-color: '#e7eef6'
       overlay: 'rgba(0, 0, 0, 0.4)'
+    slideshow:
+      background: '#0a0a09'
+      text-color: '#f1f1ec'
     showcase:
       background: '#0a0a09'
       text-color: '#f1f1ec'
@@ -82,6 +85,9 @@ preset2:
       background: '#08182e'
       text-color: '#e7eef6'
       overlay: 'rgba(0, 0, 0, 0.4)'
+    slideshow:
+      background: '#0a0a09'
+      text-color: '#f1f1ec'
     showcase:
       background: '#0a0a09'
       text-color: '#f1f1ec'
@@ -140,6 +146,9 @@ preset3:
       background: '#08182e'
       text-color: '#e7eef6'
       overlay: 'rgba(0, 0, 0, 0.4)'
+    slideshow:
+      background: '#070d14'
+      text-color: '#e7eef6'
     showcase:
       background: '#0a2344'
       text-color: '#e7eef6'
@@ -175,62 +184,65 @@ preset3:
       ink: '#070d14'
 
 preset4:
-  image: 'gantry-admin://images/presets/cyan-night.png'
-  description: 'Cyan Night'
+  image: 'gantry-admin://images/presets/bloom.png'
+  description: 'Bloom'
   colors:
-    - '#25f4ee'
-    - '#7ff9f5'
-    - '#d7c785'
+    - '#6d28d9'
+    - '#be123c'
+    - '#f59e0b'
 
   styles:
     base:
-      background: '#03080c'
-      text-color: '#f1f1ec'
+      background: '#fbf8ff'
+      text-color: '#1e1233'
       body-font: 'outfit, sans-serif'
       heading-font: 'barlowcondensed, sans-serif'
     accent:
-      color-1: '#25f4ee'
-      color-2: '#7ff9f5'
+      color-1: '#6d28d9'
+      color-2: '#be123c'
     header:
-      background: '#03080c'
-      text-color: '#f1f1ec'
+      background: '#ffffff'
+      text-color: '#1e1233'
     navigation:
-      background: '#061826'
-      text-color: '#e7eef6'
+      background: '#3b0764'
+      text-color: '#faf5ff'
       overlay: 'rgba(0, 0, 0, 0.4)'
+    slideshow:
+      background: '#ffffff'
+      text-color: '#1e1233'
     showcase:
-      background: '#06121b'
-      text-color: '#f1f1ec'
+      background: '#f3e8ff'
+      text-color: '#1e1233'
       image: ''
     feature:
-      background: '#06121b'
-      text-color: '#f1f1ec'
+      background: '#fbf8ff'
+      text-color: '#1e1233'
     subfeature:
-      background: '#070d14'
-      text-color: '#e7eef6'
+      background: '#ffe4e6'
+      text-color: '#1e1233'
     main:
-      background: '#06121b'
-      text-color: '#f1f1ec'
+      background: '#fbf8ff'
+      text-color: '#1e1233'
     footer:
-      background: '#070d14'
-      text-color: '#8b8b84'
+      background: '#3b0764'
+      text-color: '#f5f3ff'
     offcanvas:
-      background: '#061826'
-      text-color: '#f1f1ec'
-      toggle-color: '#f1f1ec'
+      background: '#3b0764'
+      text-color: '#faf5ff'
+      toggle-color: '#faf5ff'
     befree:
-      variant: 'standard'
+      variant: 'light'
       radius: '14px'
-      gold: '#d7c785'
-      gold-text: '#d7c785'
-      gold-ink: '#1c1708'
-      card: '#0b1a26'
-      raised: '#10263a'
-      line: '#1f4256'
-      muted: '#8ea0b5'
-      navy: '#0a2344'
-      paper: '#e7eef6'
-      ink: '#070d14'
+      gold: '#f59e0b'
+      gold-text: '#92400e'
+      gold-ink: '#1c1204'
+      card: '#ffffff'
+      raised: '#f6f0ff'
+      line: '#e9d5ff'
+      muted: '#5b4674'
+      navy: '#3b0764'
+      paper: '#1e1233'
+      ink: '#3b0764'
 
 preset5:
   image: 'gantry-admin://images/presets/lime-terminal.png'
@@ -256,6 +268,9 @@ preset5:
       background: '#0a140a'
       text-color: '#e9f5e0'
       overlay: 'rgba(0, 0, 0, 0.4)'
+    slideshow:
+      background: '#070b07'
+      text-color: '#e9f5e0'
     showcase:
       background: '#070b07'
       text-color: '#e9f5e0'
@@ -314,6 +329,9 @@ preset6:
       background: '#0a2344'
       text-color: '#e7eef6'
       overlay: 'rgba(0, 0, 0, 0.4)'
+    slideshow:
+      background: '#e7eef6'
+      text-color: '#0a1a2e'
     showcase:
       background: '#dfe7f1'
       text-color: '#0a1a2e'

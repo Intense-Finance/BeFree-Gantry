@@ -1,8 +1,8 @@
 details:
   name: BeFree Gantry
-  version: '1.0.0'
+  version: '1.1.0'
   icon: industry
-  date: 'November 1, 2026'
+  date: 'November 3, 2026'
   author:
     name: Intense Finance
     email: if@if.finance
@@ -16,7 +16,7 @@ details:
 
   copyright: '(C) 2026 Intense Finance. Based on Hydrogen (C) 2007 - 2022 Tiger12, LLC (originally RocketTheme, LLC).'
   license: GPLv3
-  description: BeFree Gantry, the BeFree industrial x if.finance neon meld for Gantry 5
+  description: BeFree Gantry, the BeFree industrial x if.finance neon meld for Gantry 5, with a Slideshow section
   images:
     thumbnail: admin/images/presets/meld-neon.png
     preview: admin/images/presets/meld-neon.png
@@ -103,6 +103,7 @@ admin:
   styles:
     section:
       - header
+      - slideshow
       - showcase
       - subfeature
     core:

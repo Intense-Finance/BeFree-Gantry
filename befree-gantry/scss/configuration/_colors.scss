@@ -38,6 +38,11 @@ $subfeature-text-color:			#e7eef6 !default;
 $main-background:				#0a0a09 !default;
 $main-text-color:				#f1f1ec !default;
 
+// Slideshow. An outline saved before this section existed has no slideshow
+// colors of its own, so the band follows that outline's Main palette.
+$slideshow-background:			$main-background !default;
+$slideshow-text-color:			$main-text-color !default;
+
 // Footer
 $footer-background:				#070d14 !default;
 $footer-text-color:				#8b8b84 !default;

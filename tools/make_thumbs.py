@@ -10,8 +10,11 @@ os.makedirs(f'{THEME}/admin/images/presets', exist_ok=True)
 os.makedirs(f'{THEME}/admin/images/layouts', exist_ok=True)
 os.makedirs(f'{PV}/presets', exist_ok=True); os.makedirs(f'{PV}/layouts', exist_ok=True)
 # Preset thumbs (500x400, Hydrogen size) cropped from local WP renders
-for n in ['meld-neon','industrial','befree-navy','cyan-night','lime-terminal','light-paper']:
-    im = Image.open(f'{TEST}/wp-home-{n}-1440.png').convert('RGB').crop((0,0,1440,1152)).resize((500,400), Image.LANCZOS)
+for n in ['meld-neon','industrial','befree-navy','bloom','lime-terminal','light-paper']:
+    src = f'{TEST}/wp-home-{n}-1440.png'
+    if not os.path.exists(src):
+        continue
+    im = Image.open(src).convert('RGB').crop((0,0,1440,1152)).resize((500,400), Image.LANCZOS)
     im.save(f'{THEME}/admin/images/presets/{n}.png', optimize=True)
     im.save(f'{PV}/presets/{n}.png', optimize=True)
 # Layout diagrams (200x250, Gantry size)

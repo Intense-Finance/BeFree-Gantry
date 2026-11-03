@@ -11,6 +11,8 @@ layout:
   /navigation/:
     - menu
 
+  /slideshow/: { }
+
   /container-main/:
     -
       - sidebar 30:
@@ -29,6 +31,10 @@ layout:
     - mobile-menu
 
 structure:
+  slideshow:
+    type: section
+    attributes:
+      boxed: 2
   sidebar:
     subtype: aside
     block:
