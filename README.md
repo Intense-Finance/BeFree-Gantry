@@ -3,7 +3,9 @@
 A dark, industrial **Gantry 5** theme for WordPress. It blends the **BeFree** look (navy, gold, Barlow Condensed, chamfered "industrial" cards) with the **if.finance** neon palette (lime "live" accents and cyan links).
 
 * Version: **1.1.0**
-* Requires: WordPress 6.0+, PHP 7.4+, and the free **[Gantry 5 Framework](https://gantry.org/) plugin** (5.6.x)
+* Requires: WordPress 6.0+ and the free **[Gantry 5 Framework](https://gantry.org/) plugin**
+* Gantry 5 framework: **minimum 5.5** (what this theme refuses to run without, same floor as Hydrogen 5.6.4), **recommended 5.6.4** (latest official release, 3 September 2026, on [gantry.org/downloads](https://gantry.org/downloads) and the [GitHub release](https://github.com/gantry/gantry5/releases/tag/5.6.4))
+* PHP: **8.1+** with Gantry 5.5.25 and 5.6.x (the 5.6.4 plugin declares `Requires PHP: 8.1.0`). Gantry 5.5.0 itself allowed PHP 5.6.20.
 * License: **GNU GPL v3 or later** (see [License](#license))
 * Read the launch story on if.finance: [BeFree Gantry: a dark, industrial WordPress theme](https://if.finance/befree-gantry-wordpress-theme/)
 
@@ -17,7 +19,7 @@ A dark, industrial **Gantry 5** theme for WordPress. It blends the **BeFree** lo
 
 ## Install
 
-1. Install and activate the **Gantry 5 Framework** plugin (Plugins > Add New > search "Gantry 5"). BeFree Gantry does not work without it.
+1. Install and activate the **Gantry 5 Framework** plugin, recommended version **5.6.4** (the latest official release). Download `wordpress-pkg_gantry5_v5.6.4.zip` from [gantry.org/downloads](https://gantry.org/downloads) or the [GitHub release](https://github.com/gantry/gantry5/releases/tag/5.6.4). The theme also runs on Gantry 5.5 or newer. BeFree Gantry does not work without the plugin, and it does not bundle Nucleus.
 2. Download `befree-gantry-1.1.0.zip` from the GitHub release and check its SHA-256 against `befree-gantry-1.1.0.zip.sha256`.
 3. In WordPress, go to **Appearance > Themes > Add New > Upload Theme**, pick the zip, then click **Install Now** and **Activate**.
 4. Open **Gantry 5 > BeFree Gantry** to choose a style preset, layout and particles.

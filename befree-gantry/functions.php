@@ -16,9 +16,14 @@ use Gantry\Framework\Theme;
 
 defined('ABSPATH') or die;
 
-// Note: This file must be PHP 5.2 compatible.
+/*
+ * WARNING: This file will be overridden during theme update. Do not change this file!
+ *
+ * If you want to add your custom functions, put your code into `custom/functions.php` instead!
+ */
 
-// Check min. required version of Gantry 5
+// Helium 5.6.4 marks this file PHP 5.6 compatible. Hydrogen 5.6.4 still says PHP 5.2.
+// The Gantry 5.6.4 plugin requires PHP 8.1. Minimum framework version stays 5.5.
 $requiredGantryVersion = '5.5';
 $translationDomain = 'befree-gantry';
 
