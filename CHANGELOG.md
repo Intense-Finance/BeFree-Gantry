@@ -2,6 +2,15 @@
 
 All notable changes to BeFree Gantry are documented here. This project uses [Semantic Versioning](https://semver.org/).
 
+## [1.2.1] - 2026-11-04
+
+### Changed
+- **Readable text defaults** (`_readable.scss`, loaded last): body text 1.125rem with line-height 1.6; main menu 1.0625rem (dropdowns 1rem); content-array details 90% -> 1rem; widget titles 1.15rem -> 1.3rem; sidebar and footer text 1.0625rem; post and page content 1.125rem with line-height 1.7.
+
+### Notes
+- Headings, charts and iframes are unchanged. All sizes are rem.
+- `custom/scss/custom.scss` still loads after the theme CSS, so sites with their own size rules look the same.
+
 ## [1.2.0] - 2026-11-04
 
 ### Added
