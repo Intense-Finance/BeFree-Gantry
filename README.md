@@ -163,6 +163,18 @@ These were rendered on WordPress (latest, SQLite integration), Gantry 5.6.4 and 
 | **Mobile 390 px** | **Layout: Default** | **404** |
 | ![](docs/previews/wp-test/wp-home-meld-neon-390.png) | ![](docs/previews/wp-test/wp-layout-default-1440.png) | ![](docs/previews/wp-test/wp-404-error-1440.png) |
 
+## Screenshots
+
+BeFree Gantry 1.2.1 with the BeFree Navy style, on the [iw.je](https://iw.je) test site.
+
+| **Home, desktop 1440 px** | **Menu dropdown** |
+| --- | --- |
+| ![Home page, desktop 1440 px](docs/previews/screenshots/home-desktop-1440.jpg) | ![Menu dropdown, 1440 px](docs/previews/screenshots/menu-dropdown-1440.jpg) |
+| **Single post** | **Full home page** |
+| ![Single post, 1440 px](docs/previews/screenshots/single-post-1440.jpg) | ![Full home page](docs/previews/screenshots/home-full-1920.jpg) |
+| **Mobile 390 px** | **Mobile menu** |
+| ![Mobile, 390 px](docs/previews/screenshots/mobile-390.jpg) | ![Mobile menu open, 390 px](docs/previews/screenshots/mobile-390-menu.jpg) |
+
 ## Repository layout
 
 ```
