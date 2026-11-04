@@ -1,0 +1,14 @@
+// BeFree Gantry readable text defaults (since 1.2.1, GPLv3+)
+// Larger body, menu, sidebar, footer and post text. rem only.
+// Headings, charts and iframes are not changed. Loaded last in the theme
+// stylesheet; custom/scss/custom.scss still loads after it and wins.
+
+body { font-size: 1.125rem; line-height: 1.6; }                                   // 18px base
+.g-main-nav .g-toplevel > li > .g-menu-item-container { font-size: 1.0625rem; }   // 17px top menu
+.g-main-nav .g-sublevel > li > .g-menu-item-container { font-size: 1rem; }        // 16px dropdowns
+.g-content-array .g-array-item-details { font-size: 1rem; }                       // was 90%
+#g-page-surround .widgettitle, #g-page-surround .widget h2 { font-size: 1.3rem; } // was 1.15rem
+#g-sidebar, #g-aside { font-size: 1.0625rem; }
+#g-footer { font-size: 1.0625rem; }
+.single .entry-content p, .single .entry-content li, .single .entry-content blockquote p,
+.page .entry-content p, .page .entry-content li { font-size: 1.125rem; line-height: 1.7; }
