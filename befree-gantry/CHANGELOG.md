@@ -2,6 +2,30 @@
 
 All notable changes to BeFree Gantry are documented here. This project uses [Semantic Versioning](https://semver.org/).
 
+## [1.1.0] - 2026-11-03
+
+### Added
+- A **Slideshow** section directly under Navigation and above the page body, following Helium's empty section pattern (Helium puts its slider in the header band under the nav). It is part of the Default, Left Sidebar, Both Sidebars, Full Width, Magazine Home, Home and Error layout presets, so it shows up in the Gantry Layout Manager. Layout is Fullwidth (Flushed Content). Styling matches the other BeFree sections, slider markup stays within the viewport on small screens, and the section is not rendered when nothing is assigned.
+- **Bloom**, a light style preset in the popular violet / rose / amber palette (bright accents on a light ground). Every checked text and background pair meets WCAG AA. The lowest pair is 5.98:1.
+
+### Removed
+- **Cyan Night** (the old preset4). It was the most redundant dark preset: the same lime-and-cyan accents as Meld Neon, with cyan leading. The preset4 id is kept, so an outline that points at preset4 still resolves. Colors already saved on an outline are not rewritten. Light Paper is unchanged.
+
+### Changed
+- Theme author is Intense Finance (https://if.finance) in the WordPress theme header, the Gantry About details, and the PHP file headers. The original Hydrogen copyright lines stay.
+
+### Notes
+- Existing layout particles are untouched, including the homepage hero, sidebars, Sister Site block and `system-content` (where the stock charts live). An empty Slideshow section produces no markup. Outlines already saved in `custom/` are not edited by the theme update.
+
+### Upstream (Gantry 5.6.4)
+Checked the latest official release, **Gantry 5.6.4** (3 September 2026), and the WordPress Hydrogen and Helium theme zips from that same release (`wordpress-tpl_g5_hydrogen_v5.6.4.zip`, `wordpress-tpl_g5_helium_v5.6.4.zip`). BeFree was already built from Hydrogen 5.6.4. After the rename, the shared PHP templates, Twig views, blueprints, and SCSS match that zip except for BeFree's own palette, layouts, Slideshow section, and particles. Those BeFree changes stay. Light Paper and the chart rules were not edited in this pass.
+
+Brought in from Helium 5.6.4 `functions.php` (Hydrogen 5.6.4 still has the older text): the warning to put custom code in `custom/functions.php`, and the note that this file is PHP 5.6 compatible rather than PHP 5.2. The runtime floor stays Gantry 5.5. The private RocketTheme updater block is still not included.
+
+Not copied, because they are not in the WordPress theme:
+
+- GitHub `develop` is **5.6.5** (not a release; gantry.org marks CI builds as not for production). Its changes are in the framework plugin: particle AJAX returns 404 instead of a Whoops page for anonymous requests, detailed errors are admin-only, vendor scripts are bundled instead of loaded from a CDN, and Joomla's `includes/gantry.php` uses `?Gantry $gantry = null` for PHP 8.4. The WordPress theme's `includes/gantry.php` does not have that signature. Nucleus is not bundled in this theme.
+
 ## [1.0.0] - 2026-11-01
 
 ### Added

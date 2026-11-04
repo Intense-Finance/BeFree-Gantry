@@ -1,0 +1,53 @@
+// Section under Navigation. Empty sections are not rendered by Nucleus,
+// so this padding and background apply only when a particle or widget is assigned.
+#g-slideshow {
+	padding: $section-padding 0;
+	background: $slideshow-background;
+	color: $slideshow-text-color;
+	overflow: hidden;
+
+	a {
+		color: $accent-color-2;
+		&:hover {
+			color: $accent-color-1;
+		}
+	}
+
+	h1, h2, h3, h4, h5, h6, strong {
+		color: $slideshow-text-color;
+	}
+
+	// Width only. Forcing height breaks MetaSlider's own slide script.
+	.metaslider,
+	.ml-slider,
+	.flexslider,
+	.nivoSlider,
+	.coin-slider,
+	.rslides,
+	iframe {
+		max-width: 100%;
+	}
+
+	@include breakpoint(mobile-only) {
+		padding: 1rem 0;
+	}
+}
+
+// The theme's widget card (and the Industrial chamfer) is #g-page-surround .widget.
+// Two ids beat that, so a slider in this section stays flush. Other sections,
+// including chart widgets in the main body, are unchanged.
+#g-page-surround #g-slideshow .widget {
+	background: transparent;
+	box-shadow: none;
+	border-radius: 0;
+	padding: 0;
+	margin: 0;
+	clip-path: none;
+}
+
+@media print {
+	#g-slideshow {
+		background: #fff !important;
+		color: #000 !important;
+	}
+}

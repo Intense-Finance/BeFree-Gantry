@@ -16,7 +16,7 @@ with zipfile.ZipFile(zpath, 'w', zipfile.ZIP_DEFLATED, compresslevel=9) as z:
         for f in sorted(files):
             if f == '.DS_Store': continue
             p = os.path.join(d, f); arc = os.path.relpath(p, root)
-            zi = zipfile.ZipInfo(arc, date_time=(2026, 11, 1, 0, 0, 0))  # reproducible
+            zi = zipfile.ZipInfo(arc, date_time=(2026, 11, 3, 0, 0, 0))  # reproducible
             zi.external_attr = 0o644 << 16; zi.compress_type = zipfile.ZIP_DEFLATED
             with open(p, 'rb') as fh: z.writestr(zi, fh.read())
 PY

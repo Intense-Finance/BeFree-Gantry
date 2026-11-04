@@ -2,9 +2,9 @@
 
 /**
  * @package   Gantry 5 Theme
- * @author    Tiger12 http://tiger12.com
+ * @author    Intense Finance https://if.finance
  * @originalCreator  RocketTheme (Gantry Framework) 
- * @currentDeveloper  Tiger12, LLC 
+ * @currentDeveloper  Intense Finance
  * @copyright Copyright (C) 2007 - 2022 Tiger12, LLC
  * @copyright Copyright (C) 2026 Intense Finance (BeFree Gantry modifications)
  * @license   GNU/GPLv3 or later. Derived from the Gantry 5 Hydrogen theme (GNU/GPLv2 or later).
@@ -16,9 +16,14 @@ use Gantry\Framework\Theme;
 
 defined('ABSPATH') or die;
 
-// Note: This file must be PHP 5.2 compatible.
+/*
+ * WARNING: This file will be overridden during theme update. Do not change this file!
+ *
+ * If you want to add your custom functions, put your code into `custom/functions.php` instead!
+ */
 
-// Check min. required version of Gantry 5
+// Helium 5.6.4 marks this file PHP 5.6 compatible. Hydrogen 5.6.4 still says PHP 5.2.
+// The Gantry 5.6.4 plugin requires PHP 8.1. Minimum framework version stays 5.5.
 $requiredGantryVersion = '5.5';
 $translationDomain = 'befree-gantry';
 

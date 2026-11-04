@@ -10,6 +10,8 @@ layout:
   /navigation/:
     - menu
 
+  /slideshow/: { }
+
   /main/:
     - system-content
 
@@ -19,3 +21,9 @@ layout:
 
   offcanvas:
     - mobile-menu
+
+structure:
+  slideshow:
+    type: section
+    attributes:
+      boxed: 2

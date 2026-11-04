@@ -1,9 +1,13 @@
 # BeFree Gantry
 
+Made by Intense Finance (https://if.finance)
+
 A dark, industrial **Gantry 5** theme for WordPress. It blends the **BeFree** look (navy, gold, Barlow Condensed, chamfered "industrial" cards) with the **if.finance** neon palette (lime "live" accents and cyan links).
 
-* Version: **1.0.0**
-* Requires: WordPress 6.0+, PHP 7.4+, and the free **[Gantry 5 Framework](https://gantry.org/) plugin** (5.6.x)
+* Version: **1.1.0**
+* Requires: WordPress 6.0+ and the free **[Gantry 5 Framework](https://gantry.org/) plugin**
+* Gantry 5 framework: **minimum 5.5** (what this theme refuses to run without, same floor as Hydrogen 5.6.4), **recommended 5.6.4** (latest official release, 3 September 2026, on [gantry.org/downloads](https://gantry.org/downloads) and the [GitHub release](https://github.com/gantry/gantry5/releases/tag/5.6.4))
+* PHP: **8.1+** with Gantry 5.5.25 and 5.6.x (the 5.6.4 plugin declares `Requires PHP: 8.1.0`). Gantry 5.5.0 itself allowed PHP 5.6.20.
 * License: **GNU GPL v3 or later** (see [License](#license))
 * Read the launch story on if.finance: [BeFree Gantry: a dark, industrial WordPress theme](https://if.finance/befree-gantry-wordpress-theme/)
 
@@ -17,11 +21,11 @@ A dark, industrial **Gantry 5** theme for WordPress. It blends the **BeFree** lo
 
 ## Install
 
-1. Install and activate the **Gantry 5 Framework** plugin (Plugins > Add New > search "Gantry 5"). BeFree Gantry does not work without it.
-2. Download `befree-gantry-1.0.0.zip` from the GitHub release and check its SHA-256 against `befree-gantry-1.0.0.zip.sha256`.
+1. Install and activate the **Gantry 5 Framework** plugin, recommended version **5.6.4** (the latest official release). Download `wordpress-pkg_gantry5_v5.6.4.zip` from [gantry.org/downloads](https://gantry.org/downloads) or the [GitHub release](https://github.com/gantry/gantry5/releases/tag/5.6.4). The theme also runs on Gantry 5.5 or newer. BeFree Gantry does not work without the plugin, and it does not bundle Nucleus.
+2. Download `befree-gantry-1.1.0.zip` from the GitHub release and check its SHA-256 against `befree-gantry-1.1.0.zip.sha256`.
 3. In WordPress, go to **Appearance > Themes > Add New > Upload Theme**, pick the zip, then click **Install Now** and **Activate**.
 4. Open **Gantry 5 > BeFree Gantry** to choose a style preset, layout and particles.
-5. Optional: assign your menu in **Gantry 5 > Menu** or in the Menu particle, and add widgets to the `sidebar`, `aside`, `feature-1/2/3`, `subfeature` and `footer` positions.
+5. Optional: assign your menu in **Gantry 5 > Menu** or in the Menu particle, and add widgets to the `slideshow`, `sidebar`, `aside`, `feature-1/2/3`, `subfeature` and `footer` positions.
 
 Updates are manual. Upload the new zip and WordPress will offer to replace the theme. Your Gantry settings live in `wp-content/themes/befree-gantry/custom/` and are kept. This theme does not call home or use an update server.
 
@@ -34,7 +38,7 @@ Pick a preset in **Gantry 5 > Styles > Presets**. Every text and background pair
 | **Meld Neon** (default) | ![](docs/previews/presets/meld-neon.png) | if.finance lime and cyan on BeFree dark industrial | 5.69:1 |
 | **Industrial** | ![](docs/previews/presets/industrial.png) | Hazard stripes, blueprint grid, chamfered cards, gold-plate titles, grayscale images | 5.69:1 |
 | **BeFree Navy** | ![](docs/previews/presets/befree-navy.png) | BeFree's own navy and gold | 6.69:1 |
-| **Cyan Night** | ![](docs/previews/presets/cyan-night.png) | Cyan leads, lime as the secondary accent | 5.69:1 |
+| **Bloom** | ![](docs/previews/presets/bloom.png) | Violet, rose and amber on a bright ground | 5.98:1 |
 | **Lime Terminal** | ![](docs/previews/presets/lime-terminal.png) | Lime leads on near-black, terminal style | 6.97:1 |
 | **Light Paper** | ![](docs/previews/presets/light-paper.png) | Light surfaces on BeFree paper `#e7eef6`, with a navy nav and footer | 5.57:1 |
 
@@ -50,7 +54,7 @@ Each preset fills a new **BeFree Meld** style section. You can also edit it dire
 | Card / Raised / Line | Card surface, image wells and borders |
 | Muted / Navy / Paper / Ink | Secondary text, navy panels (blockquotes, `bf-navy`), nav labels and dark ink |
 
-The standard Gantry sections (Base, Accent, Header, Navigation, Showcase, Feature, Main, Subfeature, Footer, Off-Canvas) still work as in Hydrogen. **Accent 1** is the lime "live" color and **Accent 2** is the cyan link color.
+The standard Gantry sections (Base, Accent, Header, Navigation, Slideshow, Showcase, Feature, Main, Subfeature, Footer, Off-Canvas) still work as in Hydrogen. **Accent 1** is the lime "live" color and **Accent 2** is the cyan link color, except in Bloom, where Accent 1 is violet and Accent 2 is rose. Light Paper is unchanged.
 
 ## Layout presets
 
@@ -65,6 +69,37 @@ Pick one in **Gantry 5 > Layout > Load**:
 | **Magazine Home** | ![](docs/previews/layouts/befree-magazine.png) | Showcase hero, 3-up feature grid (`feature-1..3`), main and sidebar, then subfeature. Used by the *Home* outline |
 | **Offline** | ![](docs/previews/layouts/befree-offline.png) | Maintenance / offline page |
 | **Error** | ![](docs/previews/layouts/befree-error.png) | 404 / error page |
+
+Every content layout above includes an empty **Slideshow** row directly under Navigation. Offline and body-only do not. With nothing in the row, Gantry draws no markup, so a page looks the same as before.
+
+## Slideshow
+
+The section sits where Helium puts its slider: under the navigation, above the body. Helium uses the header band for that, because Helium's navigation already holds the logo. BeFree's header is the logo bar, so the new section is named Slideshow and is not the header.
+
+It is empty until you drop something in it. The section setting **Layout** is **Fullwidth (Flushed Content)** (`boxed: 2`), which is edge to edge, with no content padding. The gear menu on the section can switch that to **Fullwidth (Boxed Content)** if the slider should sit in the page column. Colors are under **Styles > Slideshow**. An outline saved before 1.1.0 has no Slideshow colors of its own; the band then uses that outline's Main colors.
+
+**MetaSlider widget.** In **Gantry 5 > Layout**, open the Slideshow section and drag in a **Widget Block** particle. Set **Block Key** to `slideshow` (any key made of letters, numbers and hyphens works; `slideshow` matches the section). In **Appearance > Widgets**, or the block widget editor, add the MetaSlider widget to that block. The single **Widget** particle still works if you pick one MetaSlider widget, but WordPress 5.8+ marks it deprecated in favor of Widget Block.
+
+**MetaSlider shortcode.** Drag a **Custom HTML** particle into Slideshow. Paste the shortcode MetaSlider gives you, for example `[metaslider id="123"]`. Enable **Process shortcodes**. Leave **Process Twig** off unless the HTML uses Twig.
+
+Widget chrome (card fill, padding, and the Industrial chamfer) is turned off inside `#g-slideshow` only, so the slider can run full width. Sidebar, feature and main widgets are styled as before. Chart embeds live in the main content and are not targeted.
+
+On an outline you have already saved, the theme update does not rewrite `custom/config/`. That is what keeps the homepage charts and the rest of a saved layout in place. Do not use **Layout > Load** on that outline: Load replaces the whole layout. To add the section by hand, edit `custom/config/<outline>/layout.yaml` and insert this directly under `/navigation/`:
+
+```yaml
+  /slideshow/: { }
+```
+
+And under `structure:`:
+
+```yaml
+  slideshow:
+    type: section
+    attributes:
+      boxed: 2
+```
+
+Open **Gantry 5 > Layout** again and drop the particle in. If the section is still empty, or the widget block has no widgets, the front end skips it.
 
 ## Sister Site particle
 
@@ -86,15 +121,15 @@ WOFF2 works in every current browser. No EOT, TTF or SVG fallbacks are included.
 
 Chart embeds are left as they are. The **only** CSS rule that touches them recolors the `.tradingview-widget-copyright` link to the footer text color (lime on hover). Custom HTML and Block widgets, where charts usually live, get no added padding, clipping or chamfers, so chart widths and heights stay as embedded.
 
-## Local test (1.0.0)
+## Local test (1.0.0, presets updated in 1.1.0)
 
-These were rendered on WordPress (latest, SQLite integration), Gantry 5.6.4 and PHP 8.3, with the theme activated and Gantry SCSS compiled live. The sample images are test-only and are not shipped in the theme.
+These were rendered on WordPress (latest, SQLite integration), Gantry 5.6.4 and PHP 8.3, with the theme activated and Gantry SCSS compiled live. The sample images are test-only and are not shipped in the theme. Bloom replaced Cyan Night in 1.1.0, so its cell is the preset thumbnail rather than a new WordPress capture. The other captures still match: Slideshow is empty and is not drawn, and the homepage charts stay in the main content.
 
 | Meld Neon home | Industrial home | Light Paper single |
 |---|---|---|
 | ![](docs/previews/wp-test/wp-home-meld-neon-1440.png) | ![](docs/previews/wp-test/wp-home-industrial-1440.png) | ![](docs/previews/wp-test/wp-single-light-paper-1440.png) |
-| **BeFree Navy** | **Cyan Night** | **Lime Terminal** |
-| ![](docs/previews/wp-test/wp-home-befree-navy-1440.png) | ![](docs/previews/wp-test/wp-home-cyan-night-1440.png) | ![](docs/previews/wp-test/wp-home-lime-terminal-1440.png) |
+| **BeFree Navy** | **Bloom** (preset thumbnail) | **Lime Terminal** |
+| ![](docs/previews/wp-test/wp-home-befree-navy-1440.png) | ![](docs/previews/presets/bloom.png) | ![](docs/previews/wp-test/wp-home-lime-terminal-1440.png) |
 | **Layout: Left Sidebar** | **Layout: Both Sidebars** | **Layout: Full Width** |
 | ![](docs/previews/wp-test/wp-layout-left_sidebar-1440.png) | ![](docs/previews/wp-test/wp-layout-both_sidebars-1440.png) | ![](docs/previews/wp-test/wp-layout-full_width-1440.png) |
 | **Mobile 390 px** | **Layout: Default** | **404** |
@@ -105,8 +140,8 @@ These were rendered on WordPress (latest, SQLite integration), Gantry 5.6.4 and 
 ```
 befree-gantry/     the installable theme (zip this folder)
   gantry/          theme.yaml, presets.yaml
-  blueprints/      style and particle settings (styles/befree.yaml = BeFree Meld)
-  layouts/         layout presets
+  blueprints/      style and particle settings (styles/befree.yaml = BeFree Meld, styles/slideshow.yaml = Slideshow)
+  layouts/         layout presets (Slideshow under Navigation)
   particles/       sister-site particle (.yaml + .html.twig)
   scss/            befree-gantry.scss, befree-gantry/_meld.scss, _sister.scss
   fonts/           Barlow Condensed + Outfit WOFF2, OFL.txt

@@ -2,7 +2,7 @@
 # This file is distributed under the GNU General Public License v2 or later.
 msgid ""
 msgstr ""
-"Project-Id-Version: BeFree Gantry 1.0.0\n"
+"Project-Id-Version: BeFree Gantry 1.1.0\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/support/theme/wordpress\n"
 "POT-Creation-Date: 2015-08-06 20:21:49+00:00\n"
 "MIME-Version: 1.0\n"
