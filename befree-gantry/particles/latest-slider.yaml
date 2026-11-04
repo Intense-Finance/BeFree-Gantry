@@ -1,0 +1,16 @@
+name: Latest Posts Slider
+description: 'Full-width MetaSlider (free) slideshow of the latest posts: featured image, title caption, link to the post, newest first. Needs the MetaSlider plugin.'
+type: particle
+icon: fa-picture-o
+
+configuration:
+  caching:
+    type: dynamic
+
+form:
+  fields:
+    enabled:
+      type: input.checkbox
+      label: Enabled
+      description: Globally enable the particle.
+      default: true
