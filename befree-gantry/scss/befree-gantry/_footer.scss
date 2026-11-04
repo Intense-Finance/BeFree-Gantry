@@ -1,6 +1,6 @@
 #g-footer {
-	background: $footer-background;
-	color: $footer-text-color;
+	background: var(--bf-footer-bg);
+	color: var(--bf-footer-text);
 	border-top: 1px solid rgba(0,0,0,0.05);
 	@include breakpoint(mobile-only) {
 		text-align: center;

@@ -22,8 +22,8 @@ defined('ABSPATH') or die;
  * If you want to add your custom functions, put your code into `custom/functions.php` instead!
  */
 
-// Helium 5.6.4 marks this file PHP 5.6 compatible. Hydrogen 5.6.4 still says PHP 5.2.
-// The Gantry 5.6.4 plugin requires PHP 8.1. Minimum framework version stays 5.5.
+// This file runs on the PHP versions supported by the Gantry 5.6 plugin (PHP 8.1+).
+// Minimum framework version stays 5.5.
 $requiredGantryVersion = '5.5';
 $translationDomain = 'befree-gantry';
 
@@ -37,6 +37,9 @@ $gantry = require $gantry_include;
 if (!$gantry) {
     return;
 }
+
+// Load before Gantry compiles CSS. Decodes `&gt;` in custom CSS. See includes/css-raw.php.
+require_once __DIR__ . '/includes/css-raw.php';
 
 if (!$gantry->isCompatible($requiredGantryVersion)) {
     $current_theme = wp_get_theme();

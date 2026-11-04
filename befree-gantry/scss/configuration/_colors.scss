@@ -69,7 +69,7 @@ $code-bg:						#f9f2f4;
 $pre-text:						#237794;
 $pre-bg:						#f6f6f6;
 
-// Borders
+// Placeholder. Reassigned after $befree-line so borders follow the preset.
 $border-color-hover:			darken($base-border-color, 10%);
 $border-color-focus:			$accent-color-1;
 
@@ -89,3 +89,9 @@ $befree-muted:					#8ea0b5 !default;
 $befree-navy:					#0a2344 !default;
 $befree-paper:					#e7eef6 !default;
 $befree-ink:					#070d14 !default;
+
+// Borders track the preset line. Child outlines with no styles of their own
+// inherit the Base Outline value when Gantry compiles CSS.
+$base-border-color:				$befree-line;
+$border-color-hover:			darken($base-border-color, 10%);
+$border-color-focus:			$accent-color-1;

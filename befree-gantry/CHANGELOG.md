@@ -2,10 +2,34 @@
 
 All notable changes to BeFree Gantry are documented here. This project uses [Semantic Versioning](https://semver.org/).
 
+## [1.1.1] - 2026-11-04
+
+### Fixed
+- Preset switching follows the **Base Outline**. The shipped Home outline stores no colors, so it inherits the Base preset. Build refuses to package a child outline or `config/` path that contains style overrides.
+- Theme CSS uses the BeFree variables (`--bf-bg`, `--bf-text`, `--bf-link`, `--bf-gold`, `--bf-navy`, `--bf-live`, plus the section tokens such as `--bf-main-bg` and `--bf-footer-text`) instead of hex values taken from one preset. Section bands, cards, the Sister Site particle, pagination and comment chrome follow those variables.
+- Custom CSS saved through a filter that encoded `>` as `&gt;` is decoded in `custom/scss` and `custom/css` before Gantry compiles it, then written back raw. The compiler is `\BeFree\Gantry\ScssCompiler`, which only adds that decode step.
+
+### Changed
+- Recommended Gantry framework version is **5.6.5**. The minimum stays 5.5.
+
+### Notes
+- All six style presets, every layout preset, the Slideshow section, the Sister Site particle, and the single TradingView copyright-link rule are unchanged.
+- Outlines already saved under `custom/` are not rewritten. A child outline that has its own Styles colors keeps them until those overrides are cleared. That is Gantry's normal per-outline behavior.
+- No compatibility alias is shipped. In 1.1.0 the folder, text domain and SCSS names were already `befree-gantry`, and nothing in the theme still loaded another theme id.
+
+### Upstream (Gantry 5.6.5)
+Checked the WordPress.org plugin changelog for **5.6.5** (changelog date 15 October 2026, published 19 October 2026). GitHub tags on `gantry/gantry5` still stop at 5.6.0, and gantry.org/downloads was still listing the 5.6.4 packages on 4 November 2026. The 5.6.5 changes are in the framework plugin. This theme's templates and SCSS do not need a matching fork, and the runtime floor stays Gantry 5.5.
+
+- **Security:** an unauthenticated particle AJAX request with an invalid outline could show the detailed debug error page (environment, cookie, session and POST data). 5.6.5 limits that page to debug mode or administrators, validates the outline, and masks secrets. Patchstack records this for versions through 5.6.4 as CVE-2026-110889.
+- **Security:** invalid particle AJAX requests return HTTP 404 with a JSON content type. Logged-out visitors do not get the detailed error page, including when debug mode is on.
+- jQuery, jQuery UI, Bootstrap 2–5 and MooTools are bundled instead of loaded from a CDN.
+- The admin changelog is read from the bundled readme, not a remote URL.
+- The file picker uses `WP_Filesystem` for permissions.
+
 ## [1.1.0] - 2026-11-03
 
 ### Added
-- A **Slideshow** section directly under Navigation and above the page body, following Helium's empty section pattern (Helium puts its slider in the header band under the nav). It is part of the Default, Left Sidebar, Both Sidebars, Full Width, Magazine Home, Home and Error layout presets, so it shows up in the Gantry Layout Manager. Layout is Fullwidth (Flushed Content). Styling matches the other BeFree sections, slider markup stays within the viewport on small screens, and the section is not rendered when nothing is assigned.
+- A **Slideshow** section directly under Navigation and above the page body. It is an empty section in the Default, Left Sidebar, Both Sidebars, Full Width, Magazine Home, Home and Error layout presets, so it shows up in the Gantry Layout Manager. Layout is Fullwidth (Flushed Content). Styling matches the other BeFree sections, slider markup stays within the viewport on small screens, and the section is not rendered when nothing is assigned.
 - **Bloom**, a light style preset in the popular violet / rose / amber palette (bright accents on a light ground). Every checked text and background pair meets WCAG AA. The lowest pair is 5.98:1.
 
 ### Removed
@@ -18,9 +42,9 @@ All notable changes to BeFree Gantry are documented here. This project uses [Sem
 - Existing layout particles are untouched, including the homepage hero, sidebars, Sister Site block and `system-content` (where the stock charts live). An empty Slideshow section produces no markup. Outlines already saved in `custom/` are not edited by the theme update.
 
 ### Upstream (Gantry 5.6.4)
-Checked the latest official release, **Gantry 5.6.4** (3 September 2026), and the WordPress Hydrogen and Helium theme zips from that same release (`wordpress-tpl_g5_hydrogen_v5.6.4.zip`, `wordpress-tpl_g5_helium_v5.6.4.zip`). BeFree was already built from Hydrogen 5.6.4. After the rename, the shared PHP templates, Twig views, blueprints, and SCSS match that zip except for BeFree's own palette, layouts, Slideshow section, and particles. Those BeFree changes stay. Light Paper and the chart rules were not edited in this pass.
+Checked the official release at that time, **Gantry 5.6.4** (3 September 2026), and the WordPress Hydrogen theme zip from that release (`wordpress-tpl_g5_hydrogen_v5.6.4.zip`). BeFree was already built from Hydrogen 5.6.4. After the rename, the shared PHP templates, Twig views, blueprints, and SCSS match that zip except for BeFree's own palette, layouts, Slideshow section, and particles. Those BeFree changes stay. Light Paper and the chart rules were not edited in this pass.
 
-Brought in from Helium 5.6.4 `functions.php` (Hydrogen 5.6.4 still has the older text): the warning to put custom code in `custom/functions.php`, and the note that this file is PHP 5.6 compatible rather than PHP 5.2. The runtime floor stays Gantry 5.5. The private RocketTheme updater block is still not included.
+The warning to put custom code in `custom/functions.php` matches the current Gantry 5 theme text. The runtime floor stays Gantry 5.5. The private RocketTheme updater block is still not included.
 
 Not copied, because they are not in the WordPress theme:
 

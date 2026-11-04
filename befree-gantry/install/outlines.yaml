@@ -1,3 +1,8 @@
+# Styles inherit from the Base Outline (id: default).
+# Do not add styles/ or styles.yaml under a child outline. A color saved
+# on that outline overrides Base, so picking a preset on Base will not
+# recolor pages assigned to it. Layout preset names below are layouts, not
+# style presets.
 default:
   title: Default
   preset: default

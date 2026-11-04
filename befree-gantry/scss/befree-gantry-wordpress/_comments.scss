@@ -6,17 +6,17 @@
         li.comment {
 
             .comment-body {
-                background-color: #f2f2f2;
+                background-color: var(--bf-card);
             }
 
             .comment-author {
-                background-color: $navigation-background;
-                color: $navigation-text-color;
+                background-color: var(--bf-nav-bg);
+                color: var(--bf-nav-text);
 
                 a {
-                    color: $navigation-text-color;
+                    color: var(--bf-nav-text);
                     &:hover {
-                        color: $showcase-background;
+                        color: var(--bf-showcase-bg);
                     }
                 }
             }
@@ -24,11 +24,11 @@
             &.bypostauthor {
                 > .comment-body {
                     > .comment-author {
-                        background-color: $showcase-background;
-                        color: $showcase-text-color;
+                        background-color: var(--bf-showcase-bg);
+                        color: var(--bf-showcase-text);
 
                         a:hover {
-                            color: $accent-color-1;
+                            color: var(--bf-live);
                         }
                     }
                 }

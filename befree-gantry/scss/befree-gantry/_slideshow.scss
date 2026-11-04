@@ -2,19 +2,19 @@
 // so this padding and background apply only when a particle or widget is assigned.
 #g-slideshow {
 	padding: $section-padding 0;
-	background: $slideshow-background;
-	color: $slideshow-text-color;
+	background: var(--bf-slideshow-bg);
+	color: var(--bf-slideshow-text);
 	overflow: hidden;
 
 	a {
-		color: $accent-color-2;
+		color: var(--bf-link);
 		&:hover {
-			color: $accent-color-1;
+			color: var(--bf-live);
 		}
 	}
 
 	h1, h2, h3, h4, h5, h6, strong {
-		color: $slideshow-text-color;
+		color: var(--bf-slideshow-text);
 	}
 
 	// Width only. Forcing height breaks MetaSlider's own slide script.

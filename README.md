@@ -4,10 +4,10 @@ Made by Intense Finance (https://if.finance)
 
 A dark, industrial **Gantry 5** theme for WordPress. It blends the **BeFree** look (navy, gold, Barlow Condensed, chamfered "industrial" cards) with the **if.finance** neon palette (lime "live" accents and cyan links).
 
-* Version: **1.1.0**
+* Version: **1.1.1**
 * Requires: WordPress 6.0+ and the free **[Gantry 5 Framework](https://gantry.org/) plugin**
-* Gantry 5 framework: **minimum 5.5** (what this theme refuses to run without, same floor as Hydrogen 5.6.4), **recommended 5.6.4** (latest official release, 3 September 2026, on [gantry.org/downloads](https://gantry.org/downloads) and the [GitHub release](https://github.com/gantry/gantry5/releases/tag/5.6.4))
-* PHP: **8.1+** with Gantry 5.5.25 and 5.6.x (the 5.6.4 plugin declares `Requires PHP: 8.1.0`). Gantry 5.5.0 itself allowed PHP 5.6.20.
+* Gantry 5 framework: **minimum 5.5**, **recommended 5.6.5** (WordPress.org plugin, 19 October 2026). See [Gantry 5.6.5](#gantry-565).
+* PHP: **8.1+** with Gantry 5.5.25 and 5.6.x (the 5.6.5 plugin declares `Requires PHP: 8.1.0`). Gantry 5.5.0 itself allowed PHP 5.6.20.
 * License: **GNU GPL v3 or later** (see [License](#license))
 * Read the launch story on if.finance: [BeFree Gantry: a dark, industrial WordPress theme](https://if.finance/befree-gantry-wordpress-theme/)
 
@@ -21,8 +21,8 @@ A dark, industrial **Gantry 5** theme for WordPress. It blends the **BeFree** lo
 
 ## Install
 
-1. Install and activate the **Gantry 5 Framework** plugin, recommended version **5.6.4** (the latest official release). Download `wordpress-pkg_gantry5_v5.6.4.zip` from [gantry.org/downloads](https://gantry.org/downloads) or the [GitHub release](https://github.com/gantry/gantry5/releases/tag/5.6.4). The theme also runs on Gantry 5.5 or newer. BeFree Gantry does not work without the plugin, and it does not bundle Nucleus.
-2. Download `befree-gantry-1.1.0.zip` from the GitHub release and check its SHA-256 against `befree-gantry-1.1.0.zip.sha256`.
+1. Install and activate the **Gantry 5 Framework** plugin, recommended version **5.6.5**. Update it from **Plugins** in WordPress, or install it from [wordpress.org/plugins/gantry5](https://wordpress.org/plugins/gantry5/). The theme also runs on Gantry 5.5 or newer. BeFree Gantry does not work without the plugin, and it does not bundle Nucleus.
+2. Download `befree-gantry-1.1.1.zip` from the GitHub release and check its SHA-256 against `befree-gantry-1.1.1.zip.sha256`.
 3. In WordPress, go to **Appearance > Themes > Add New > Upload Theme**, pick the zip, then click **Install Now** and **Activate**.
 4. Open **Gantry 5 > BeFree Gantry** to choose a style preset, layout and particles.
 5. Optional: assign your menu in **Gantry 5 > Menu** or in the Menu particle, and add widgets to the `slideshow`, `sidebar`, `aside`, `feature-1/2/3`, `subfeature` and `footer` positions.
@@ -41,6 +41,16 @@ Pick a preset in **Gantry 5 > Styles > Presets**. Every text and background pair
 | **Bloom** | ![](docs/previews/presets/bloom.png) | Violet, rose and amber on a bright ground | 5.98:1 |
 | **Lime Terminal** | ![](docs/previews/presets/lime-terminal.png) | Lime leads on near-black, terminal style | 6.97:1 |
 | **Light Paper** | ![](docs/previews/presets/light-paper.png) | Light surfaces on BeFree paper `#e7eef6`, with a navy nav and footer | 5.57:1 |
+
+## Switching styles
+
+Presets are chosen on the **Base Outline**. The Home outline shipped with this theme does not store colors of its own, so pages that use it inherit that preset. Do not copy color values into a child outline: a color saved there overrides Base.
+
+1. Open **Gantry 5 > Styles** on the **Base Outline**, pick a preset and save.
+2. If a page still shows the old colors, recompile the CSS (**Gantry 5 > Recompile/clear cache**) and then purge the LiteSpeed (or other page) cache.
+3. Save custom CSS raw so `>` is not encoded.
+
+Theme rules use the BeFree variables, for example `var(--bf-bg)`, `var(--bf-text)`, `var(--bf-link)`, `var(--bf-gold)`, `var(--bf-navy)` and `var(--bf-live)`. Use those in custom CSS instead of a preset's hex colors, and do not add `!important` to a hardcoded palette. If a filter saved `&gt;` in place of `>`, the selector matches nothing. On compile, the theme decodes `&gt;`, `&lt;`, `&amp;` and `&quot;` in `custom/scss` and `custom/css` and writes the raw file back. An outline that still has its own checked Styles colors keeps them until those overrides are cleared and the outline is saved.
 
 ### Styles > BeFree Meld
 
@@ -74,7 +84,7 @@ Every content layout above includes an empty **Slideshow** row directly under Na
 
 ## Slideshow
 
-The section sits where Helium puts its slider: under the navigation, above the body. Helium uses the header band for that, because Helium's navigation already holds the logo. BeFree's header is the logo bar, so the new section is named Slideshow and is not the header.
+The section sits directly under the navigation and above the body. BeFree's header is the logo bar, so the slider is its own section and is not part of the header.
 
 It is empty until you drop something in it. The section setting **Layout** is **Fullwidth (Flushed Content)** (`boxed: 2`), which is edge to edge, with no content padding. The gear menu on the section can switch that to **Fullwidth (Boxed Content)** if the slider should sit in the page column. Colors are under **Styles > Slideshow**. An outline saved before 1.1.0 has no Slideshow colors of its own; the band then uses that outline's Main colors.
 
@@ -119,7 +129,21 @@ WOFF2 works in every current browser. No EOT, TTF or SVG fallbacks are included.
 
 ## Charts and TradingView widgets
 
-Chart embeds are left as they are. The **only** CSS rule that touches them recolors the `.tradingview-widget-copyright` link to the footer text color (lime on hover). Custom HTML and Block widgets, where charts usually live, get no added padding, clipping or chamfers, so chart widths and heights stay as embedded.
+Chart embeds are left as they are. The **only** CSS rule that touches them recolors the `.tradingview-widget-copyright` link to the footer text color (the live accent on hover). Custom HTML and Block widgets, where charts usually live, get no added padding, clipping or chamfers, so chart widths and heights stay as embedded.
+
+## Gantry 5.6.5
+
+Recommended framework version is **5.6.5** for WordPress. It was published to the [WordPress.org plugin directory](https://wordpress.org/plugins/gantry5/) on 19 October 2026 (changelog date 15 October 2026). The [gantry/gantry5](https://github.com/gantry/gantry5) GitHub tags still stop at 5.6.0, and [gantry.org/downloads](https://gantry.org/downloads) was still offering the 5.6.4 packages when this theme was checked on 4 November 2026. Install or update the plugin from WordPress itself.
+
+5.6.5 is compatible with this theme. The changes are in the framework plugin, not in theme templates or SCSS. The theme floor stays Gantry 5.5. The plugin still requires PHP 8.1.0 and lists WordPress tested up to 7.1.4.
+
+From the WordPress.org changelog for 5.6.5:
+
+* **Security.** An unauthenticated particle AJAX request with an invalid outline could show the detailed debug error page, including environment, cookie, session and POST data. The debug page is now limited to debug mode or administrators, the handler checks the outline, and secret values are masked. Patchstack records this as CVE-2026-110889 for versions through 5.6.4.
+* **Security.** Invalid particle AJAX requests return HTTP 404 with a JSON content type. Detailed error pages are not shown to logged-out visitors, including when debug mode is on.
+* jQuery, jQuery UI, Bootstrap 2–5 and MooTools are bundled instead of loaded from third-party CDNs.
+* The admin changelog is read from the bundled readme instead of a remote URL.
+* The file picker uses `WP_Filesystem` when it sets permissions.
 
 ## Local test (1.0.0, presets updated in 1.1.0)
 

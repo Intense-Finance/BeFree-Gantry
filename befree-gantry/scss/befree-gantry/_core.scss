@@ -1,12 +1,12 @@
 body {
-	color: $base-text-color;
-	background: $base-background;
+	color: var(--bf-text);
+	background: var(--bf-bg);
 	-webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
 
 #g-page-surround {
-	background: $base-background;
+	background: var(--bf-bg);
 }
 
 @media print {
