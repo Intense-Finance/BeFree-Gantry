@@ -6,6 +6,7 @@ All notable changes to BeFree Gantry are documented here. This project uses [Sem
 
 ### Added
 - **Latest Posts Slider** for MetaSlider (free): `includes/latest-slider.php`, the `latest-slider` particle and the `[befree_latest_slider]` shortcode. One MetaSlider slideshow is kept in sync with the latest 20 published posts that have a featured image (newest first): featured image, title caption, link to the post. Rebuilt on publish, update, unpublish, delete and featured-image change. Hand-added slides are not touched. Filters: `befree_latest_slider_count`, `befree_latest_slider_settings`.
+- **Wide container** (`_wide.scss`): add the CSS class `bf-wide` to a section (gear menu > CSS Classes) and its content grows to a centered 1600px container, fluid below that. Width is `--bf-wide-max` (default `1600px`). Sections without the class are unchanged.
 - Full-width slider styles in `_slideshow.scss`: when the Slideshow section holds this slider it drops its padding and container width, the image covers a responsive band (`clamp()`), and the caption scales from phones to 4K.
 
 ### Notes

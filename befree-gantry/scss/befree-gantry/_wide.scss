@@ -1,0 +1,10 @@
+// Wide container: add the CSS class `bf-wide` to any section (gear menu > CSS Classes)
+// and its content container grows to 1600px, centered. Below 1600px it is fluid,
+// with the normal container padding, so phones are unchanged.
+// Change the width with --bf-wide-max (for example in custom CSS).
+.bf-wide .g-container {
+	width: 100%;
+	max-width: var(--bf-wide-max, 1600px);
+	margin-left: auto;
+	margin-right: auto;
+}
