@@ -9,7 +9,7 @@
             .tease {
                 // Sticky Posts
                 &.sticky {
-                    background-color: #f2f2f2;
+                    background-color: var(--bf-raised);
                 }
             }
         }
@@ -21,6 +21,6 @@
     input.search-field {
         height: 40px;
         padding-top: 3px;
-        color: $base-text-color;
+        color: var(--bf-text);
     }
 }

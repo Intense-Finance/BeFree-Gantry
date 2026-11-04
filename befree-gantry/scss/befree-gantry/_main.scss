@@ -4,8 +4,8 @@
 
 #g-main {
 	padding: $section-padding 0;
-	background: $main-background;
-	color: $main-text-color;
+	background: var(--bf-main-bg);
+	color: var(--bf-main-text);
 }
 
 @media print {

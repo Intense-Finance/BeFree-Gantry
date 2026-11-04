@@ -1,7 +1,7 @@
 #g-feature {
 	padding: 1.5rem 0;
-	background: $feature-background;
-	color: $feature-text-color;
+	background: var(--bf-feature-bg);
+	color: var(--bf-feature-text);
 }
 
 @media print {

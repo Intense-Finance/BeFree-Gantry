@@ -2,24 +2,24 @@
 // Plain links only: no scripts, no tracking, no shared login.
 .bf-sister {
     position: relative; overflow: hidden; box-sizing: border-box; max-width: 100%;
-    background: $befree-card; border: 1px solid $befree-line; border-radius: $befree-radius;
-    padding: 18px 18px 16px; color: $base-text-color; font-family: get-font-family($base-body-font); font-size: 15px; line-height: 1.5;
+    background: var(--bf-card); border: 1px solid var(--bf-line); border-radius: var(--bf-radius);
+    padding: 18px 18px 16px; color: var(--bf-text); font-family: get-font-family($base-body-font); font-size: 15px; line-height: 1.5;
     * { box-sizing: border-box; }
-    &.bf-sister-hazard:before { content: ""; position: absolute; left: 0; right: 0; top: 0; height: 6px; background: repeating-linear-gradient(-45deg, $befree-gold 0 10px, #050505 10px 20px); }
-    .bf-sister-eyebrow { margin-top: 6px; display: flex; align-items: center; gap: 8px; font-weight: 600; font-size: 11px; line-height: 1; letter-spacing: .18em; text-transform: uppercase; color: $befree-gold-text;
-        i { flex: 1; height: 1px; background: $befree-line; } }
-    .bf-sister-pair { display: flex; align-items: center; gap: 10px; margin: 14px 0 4px; font: 700 13px/1 get-font-family($base-heading-font); letter-spacing: .14em; text-transform: uppercase; color: $befree-muted;
-        b { color: $base-text-color; font-weight: 600; } span { color: $accent-color-2; } }
-    .bf-sister-name { display: block; margin: 6px 0; font: 700 34px/1 get-font-family($base-heading-font); letter-spacing: .05em; text-transform: uppercase; color: $base-text-color; text-decoration: none;
-        em { font-style: normal; color: $accent-color-1; text-shadow: 0 0 14px rgba($accent-color-1, .45); }
-        &:hover { color: $accent-color-2; } }
-    .bf-sister-tag { margin: 0 0 14px; color: $befree-muted; font-size: 14px; }
-    .bf-sister-url { display: inline-block; margin-bottom: 14px; padding: 4px 10px; border: 1px solid $befree-line; border-radius: 999px; font-size: 12px; letter-spacing: .08em; color: $accent-color-2; background: $base-background; }
+    &.bf-sister-hazard:before { content: ""; position: absolute; left: 0; right: 0; top: 0; height: 6px; background: repeating-linear-gradient(-45deg, var(--bf-gold) 0 10px, var(--bf-bg) 10px 20px); }
+    .bf-sister-eyebrow { margin-top: 6px; display: flex; align-items: center; gap: 8px; font-weight: 600; font-size: 11px; line-height: 1; letter-spacing: .18em; text-transform: uppercase; color: var(--bf-gold-text);
+        i { flex: 1; height: 1px; background: var(--bf-line); } }
+    .bf-sister-pair { display: flex; align-items: center; gap: 10px; margin: 14px 0 4px; font: 700 13px/1 get-font-family($base-heading-font); letter-spacing: .14em; text-transform: uppercase; color: var(--bf-muted);
+        b { color: var(--bf-text); font-weight: 600; } span { color: var(--bf-link); } }
+    .bf-sister-name { display: block; margin: 6px 0; font: 700 34px/1 get-font-family($base-heading-font); letter-spacing: .05em; text-transform: uppercase; color: var(--bf-text); text-decoration: none;
+        em { font-style: normal; color: var(--bf-live); text-shadow: 0 0 14px rgba($accent-color-1, .45); }
+        &:hover { color: var(--bf-link); } }
+    .bf-sister-tag { margin: 0 0 14px; color: var(--bf-muted); font-size: 14px; }
+    .bf-sister-url { display: inline-block; margin-bottom: 14px; padding: 4px 10px; border: 1px solid var(--bf-line); border-radius: 999px; font-size: 12px; letter-spacing: .08em; color: var(--bf-link); background: var(--bf-bg); }
     .bf-sister-btns { display: flex; flex-wrap: wrap; gap: 8px; }
-    .bf-sister-btn { display: inline-block; padding: 10px 16px; border-radius: if($befree-radius == 0, 0, 6px); border: 1px solid $befree-gold; background: $befree-gold; color: $befree-gold-ink !important;
+    .bf-sister-btn { display: inline-block; padding: 10px 16px; border-radius: if($befree-radius == 0, 0, 6px); border: 1px solid var(--bf-gold); background: var(--bf-gold); color: var(--bf-gold-ink) !important;
         font: 700 14px/1 get-font-family($base-heading-font); letter-spacing: .12em; text-transform: uppercase; text-decoration: none;
-        &.bf-sister-ghost { background: transparent; border-color: $accent-color-2; color: $accent-color-2 !important; }
-        &.bf-sister-neon { background: transparent; border-color: $accent-color-1; color: $accent-color-1 !important; }
+        &.bf-sister-ghost { background: transparent; border-color: var(--bf-link); color: var(--bf-link) !important; }
+        &.bf-sister-neon { background: transparent; border-color: var(--bf-live); color: var(--bf-live) !important; }
         &:hover { box-shadow: 0 0 16px rgba($accent-color-2, .35); } }
-    .bf-sister-note { margin: 12px 0 0; padding-top: 10px; border-top: 1px solid $befree-line; font-size: 11px; letter-spacing: .12em; text-transform: uppercase; color: $befree-muted; }
+    .bf-sister-note { margin: 12px 0 0; padding-top: 10px; border-top: 1px solid var(--bf-line); font-size: 11px; letter-spacing: .12em; text-transform: uppercase; color: var(--bf-muted); }
 }

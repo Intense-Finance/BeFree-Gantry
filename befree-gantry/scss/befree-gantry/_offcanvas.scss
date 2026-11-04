@@ -1,7 +1,7 @@
 #g-offcanvas {
-	background: $offcanvas-background;
+	background: var(--bf-offcanvas-bg);
 	width: $offcanvas-width;
-	color: $offcanvas-text-color;
+	color: var(--bf-offcanvas-text);
 	a {
 		color: lighten($offcanvas-background, 50%);
 		&:hover {
@@ -10,7 +10,7 @@
 	}
 
 	h1, h2, h3, h4, h5, h6, strong {
-		color: $offcanvas-text-color;
+		color: var(--bf-offcanvas-text);
 	}
 
 	.button {
@@ -27,7 +27,7 @@
 
 .g-offcanvas-toggle {
 	font-size: $core-font-size + 0.5;
-	color: $offcanvas-toggle-color;
+	color: var(--bf-offcanvas-toggle);
 	@if $offcanvas-toggle-visibility == 1 {
 		display: none;
 		@media only all and (max-width: $breakpoints-mobile-menu-breakpoint) {

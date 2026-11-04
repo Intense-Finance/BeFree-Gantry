@@ -1,8 +1,8 @@
 details:
   name: BeFree Gantry
-  version: '1.1.0'
+  version: '1.1.1'
   icon: industry
-  date: 'November 3, 2026'
+  date: 'November 4, 2026'
   author:
     name: Intense Finance
     email: if@if.finance
@@ -47,7 +47,8 @@ configuration:
       600: 'gantry-theme://fonts/outfit/Outfit-Variable'
 
   css:
-    compiler: \Gantry\Component\Stylesheet\ScssCompiler
+    # Decodes HTML entities in custom CSS at compile time. See includes/css-raw.php.
+    compiler: \BeFree\Gantry\ScssCompiler
     options:
       compatibility: '5.5'
       deprecations: true

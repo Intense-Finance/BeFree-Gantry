@@ -8,8 +8,8 @@
 
     .page-numbers, .prev, .next {
         padding: 0.3rem 1rem;
-        background: #fafafa;
-        border: 1px solid $base-border-color;
+        background: var(--bf-card);
+        border: 1px solid var(--bf-line);
         border-radius: $core-border-radius;
     }
 }

@@ -1,6 +1,6 @@
 #g-header {
-	background: $header-background;
-	color: $header-text-color;
+	background: var(--bf-header-bg);
+	color: var(--bf-header-text);
 	position: relative;
 	z-index: 3;
 

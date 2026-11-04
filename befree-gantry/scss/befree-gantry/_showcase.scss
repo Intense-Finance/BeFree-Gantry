@@ -1,10 +1,10 @@
 #g-showcase {
 	padding: $section-padding 0;
-	background-color: $showcase-background;
+	background-color: var(--bf-showcase-bg);
 	@if $showcase-image {
     	background-image: url($showcase-image);
 	}
-	color: $showcase-text-color;
+	color: var(--bf-showcase-text);
 
 	a {
 		color: lighten($showcase-background, 50%);

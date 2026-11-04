@@ -1,6 +1,6 @@
 #g-navigation {
-    background: $navigation-background;
-    color: $navigation-text-color;
+    background: var(--bf-nav-bg);
+    color: var(--bf-nav-text);
     text-align: center;
     position: relative;
     z-index: 2;
