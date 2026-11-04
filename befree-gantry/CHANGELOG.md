@@ -2,6 +2,16 @@
 
 All notable changes to BeFree Gantry are documented here. This project uses [Semantic Versioning](https://semver.org/).
 
+## [1.2.0] - 2026-11-04
+
+### Added
+- **Latest Posts Slider** for MetaSlider (free): `includes/latest-slider.php`, the `latest-slider` particle and the `[befree_latest_slider]` shortcode. One MetaSlider slideshow is kept in sync with the latest 20 published posts that have a featured image (newest first): featured image, title caption, link to the post. Rebuilt on publish, update, unpublish, delete and featured-image change. Hand-added slides are not touched. Filters: `befree_latest_slider_count`, `befree_latest_slider_settings`.
+- Full-width slider styles in `_slideshow.scss`: when the Slideshow section holds this slider it drops its padding and container width, the image covers a responsive band (`clamp()`), and the caption scales from phones to 4K.
+
+### Notes
+- Does nothing unless MetaSlider is active. Layout presets are unchanged; add the particle to the Slideshow section yourself.
+- Style presets, the Sister Site particle, chart and TradingView rules are unchanged.
+
 ## [1.1.1] - 2026-11-04
 
 ### Fixed

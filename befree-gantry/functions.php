@@ -60,6 +60,7 @@ $theme = $gantry['theme'];
 // Theme helper files that can contain useful methods or filters
 $helpers = array(
     'includes/helper.php', // General helper file
+    'includes/latest-slider.php', // Latest Posts slider for MetaSlider (free)
 );
 
 // Require custom Functions if the file exists (allows overriding helpers).
