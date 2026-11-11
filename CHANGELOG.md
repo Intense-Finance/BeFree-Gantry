@@ -2,6 +2,15 @@
 
 All notable changes to BeFree Gantry are documented here. This project uses [Semantic Versioning](https://semver.org/).
 
+## [1.2.2] - 2026-11-11
+
+### Fixed
+- Light surfaces now set a text color. On dark presets, `pre` / `.wp-block-preformatted`, `.box1`, `.box2`, alerts and the same kind of fill inherited `--bf-text` (light) and were unreadable. Each fill has a `--bf-*-bg` / `--bf-*-text` pair. Headings, `strong` and links inside those fills are included. Checked pairs are at least 4.5:1 on all six presets (`python3 tools/surface_contrast.py`).
+
+### Notes
+- Backgrounds of `pre`, code, boxes and alerts are unchanged. On BeFree Navy the preformatted block stays `#f6f6f6`; its text is `#1a2332` (was the light body color, 1.08:1).
+- Striped WordPress tables no longer use the default `#f0f0f0` row. The stripe is an 8% tint of the body text so it stays on the preset.
+
 ## [1.2.1] - 2026-11-04
 
 ### Changed

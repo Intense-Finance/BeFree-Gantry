@@ -17,6 +17,22 @@ $bf-is-industrial: $befree-variant == 'industrial';
 $bf-sharp: if($befree-radius == 0, 0, min($befree-radius, 8px));
 $bf-btn-radius: if($befree-radius == 0, 0, 6px);
 
+// Light fills (pre, code, boxes, alerts) and the quote/table panels.
+// Link colors stay the preset accent when that accent clears 4.5:1 on the
+// fill, and fall back to a dark blue when the accent is neon-on-white.
+$bf-quote-bg: if($bf-is-light, $befree-card, $befree-navy);
+$bf-quote-text: if($bf-is-light, $befree-paper, $navigation-text-color);
+$bf-quote-link: if(bf-contrasts($accent-color-2, $bf-quote-bg), $accent-color-2, bf-on($bf-quote-bg));
+$bf-box1-link: if(bf-contrasts($accent-color-2, $box1-background), $accent-color-2, $box-link-fallback);
+$bf-box2-link: if(bf-contrasts($accent-color-2, $box2-background), $accent-color-2, $box-link-fallback);
+$bf-box3-text: bf-on($accent-color-1);
+$bf-box3-link: if(bf-contrasts($accent-color-2, $accent-color-1), $accent-color-2, $bf-box3-text);
+$bf-box4-text: bf-on($accent-color-2);
+$bf-box4-link: $bf-box4-text;
+$bf-panel-link: if(bf-contrasts($accent-color-2, $befree-navy), $accent-color-2, bf-on($befree-navy));
+$bf-table-head-bg: lighten($base-border-color, 10%);
+$bf-table-head-text: bf-on-preferred($bf-table-head-bg, $base-text-color);
+
 // One token set for the active preset. Component rules use var(--bf-*)
 // so a preset saved on the Base Outline recolors the theme, including
 // custom CSS that references the same variables instead of a hex value.
@@ -56,6 +72,45 @@ $bf-btn-radius: if($befree-radius == 0, 0, 6px);
     --bf-offcanvas-bg: #{$offcanvas-background};
     --bf-offcanvas-text: #{$offcanvas-text-color};
     --bf-offcanvas-toggle: #{$offcanvas-toggle-color};
+    // Surfaces that paint their own background. Override a pair together.
+    --bf-box-bg: #{$box1-background};
+    --bf-box-text: #{$box1-text};
+    --bf-box-link: #{$bf-box1-link};
+    --bf-box2-bg: #{$box2-background};
+    --bf-box2-text: #{$box2-text};
+    --bf-box2-link: #{$bf-box2-link};
+    --bf-box3-bg: #{$accent-color-1};
+    --bf-box3-text: #{$bf-box3-text};
+    --bf-box3-link: #{$bf-box3-link};
+    --bf-box4-bg: #{$accent-color-2};
+    --bf-box4-text: #{$bf-box4-text};
+    --bf-box4-link: #{$bf-box4-link};
+    --bf-pre-bg: #{$pre-bg};
+    --bf-pre-text: #{$pre-ink};
+    --bf-pre-link: #{$pre-link};
+    --bf-pre-code: #{$pre-text};
+    --bf-code-bg: #{$code-bg};
+    --bf-code-text: #{$code-ink};
+    --bf-kbd-bg: #{$pre-bg};
+    --bf-kbd-text: #{$pre-ink};
+    --bf-kbd-border: #{$kbd-border};
+    --bf-alert-bg: #{$alert-bg};
+    --bf-alert-text: #{$alert-text};
+    --bf-alert-success-bg: #{$alert-success-bg};
+    --bf-alert-success-text: #{$alert-success-text};
+    --bf-alert-error-bg: #{$alert-error-bg};
+    --bf-alert-error-text: #{$alert-error-text};
+    --bf-alert-info-bg: #{$alert-info-bg};
+    --bf-alert-info-text: #{$alert-info-text};
+    --bf-quote-bg: #{$bf-quote-bg};
+    --bf-quote-text: #{$bf-quote-text};
+    --bf-quote-link: #{$bf-quote-link};
+    --bf-panel-text: #{$navigation-text-color};
+    --bf-panel-link: #{$bf-panel-link};
+    --bf-table-head-bg: #{$bf-table-head-bg};
+    --bf-table-head-text: #{$bf-table-head-text};
+    --bf-table-stripe-bg: #{rgba($base-text-color, 0.08)};
+    --bf-table-stripe-text: #{$base-text-color};
 }
 
 // ---------- Base ----------
@@ -121,8 +176,13 @@ input[type="text"], input[type="email"], input[type="search"], input[type="url"]
     h2, h3, h4 { font-family: $bf-heading; font-weight: 600; letter-spacing: .03em; padding-left: 12px; border-left: 3px solid var(--bf-gold); }
     a { color: var(--bf-link); &:hover { color: var(--bf-live); } }
     img { border-radius: $bf-sharp; }
-    blockquote { background: var(--bf-navy); border: 1px solid var(--bf-line); border-left: 3px solid var(--bf-link); border-radius: var(--bf-radius); padding: 18px 20px; margin: 24px 0; color: var(--bf-on-navy);
-        @if $bf-is-light { color: var(--bf-paper); background: var(--bf-card); } }
+    blockquote,
+    .wp-block-quote,
+    .wp-block-pullquote blockquote {
+        background: var(--bf-quote-bg); border: 1px solid var(--bf-line); border-left: 3px solid var(--bf-link); border-radius: var(--bf-radius); padding: 18px 20px; margin: 24px 0; color: var(--bf-quote-text);
+        p, li, cite, h1, h2, h3, h4, h5, h6, strong, b { color: var(--bf-quote-text); }
+        a { color: var(--bf-quote-link); text-decoration: underline; }
+    }
     table:not([class*="tradingview"]) td, table:not([class*="tradingview"]) th { border-color: var(--bf-line); }
 }
 .bf-dropcap > p:first-child:first-letter, .entry-content > p.bf-dropcap:first-letter {
@@ -161,8 +221,11 @@ input[type="text"], input[type="email"], input[type="search"], input[type="url"]
 .bf-eyebrow { font: 600 12px/1.3 $bf-body; letter-spacing: .16em; text-transform: uppercase; color: var(--bf-gold-text); }
 .bf-live { color: var(--bf-live); }
 .bf-live-dot { display: inline-block; width: 8px; height: 8px; border-radius: 50%; background: var(--bf-live); box-shadow: 0 0 8px var(--bf-live); vertical-align: middle; }
-.bf-card { background: var(--bf-card); border: 1px solid var(--bf-line); border-radius: var(--bf-radius); padding: 16px; }
-.bf-panel { background: var(--bf-navy); border: 1px solid var(--bf-line); border-left: 3px solid var(--bf-link); border-radius: var(--bf-radius); padding: 18px 20px; color: var(--bf-on-navy); }
+.bf-card { background: var(--bf-card); color: var(--bf-text); border: 1px solid var(--bf-line); border-radius: var(--bf-radius); padding: 16px; }
+.bf-panel { background: var(--bf-navy); border: 1px solid var(--bf-line); border-left: 3px solid var(--bf-link); border-radius: var(--bf-radius); padding: 18px 20px; color: var(--bf-panel-text);
+    h1, h2, h3, h4, h5, h6, strong, b, p, li { color: var(--bf-panel-text); }
+    a { color: var(--bf-panel-link); text-decoration: underline; }
+}
 .bf-section-title { display: flex; align-items: center; gap: 14px; margin: 30px 0 14px;
     h2, .bf-h { font: 700 26px/1.1 $bf-heading; text-transform: uppercase; letter-spacing: .08em; margin: 0; }
     span { color: var(--bf-live); }
@@ -183,8 +246,11 @@ input[type="text"], input[type="email"], input[type="search"], input[type="url"]
 }
 
 // ---------- Block variations (theme.yaml) ----------
-.bf-card > .g-content, .g-content.bf-card { background: var(--bf-card); box-shadow: 0 0 0 1px var(--bf-line); border-radius: var(--bf-radius); }
-.bf-navy > .g-content, .g-content.bf-navy { background: var(--bf-navy); box-shadow: 0 0 0 1px var(--bf-line); border-radius: var(--bf-radius); color: var(--bf-on-navy); }
+.bf-card > .g-content, .g-content.bf-card { background: var(--bf-card); color: var(--bf-text); box-shadow: 0 0 0 1px var(--bf-line); border-radius: var(--bf-radius); }
+.bf-navy > .g-content, .g-content.bf-navy { background: var(--bf-navy); box-shadow: 0 0 0 1px var(--bf-line); border-radius: var(--bf-radius); color: var(--bf-panel-text);
+    h1, h2, h3, h4, h5, h6, strong, b, p, li, .widgettitle { color: var(--bf-panel-text); }
+    a:not(.button):not(.bf-btn) { color: var(--bf-panel-link); text-decoration: underline; }
+}
 .bf-glow > .g-content { transition: box-shadow .2s; &:hover { box-shadow: 0 0 0 1px var(--bf-link), 0 0 24px rgba($accent-color-2, .18); } }
 .bf-hazard > .g-content { position: relative; &:before { content: ""; position: absolute; left: 0; right: 0; top: 0; height: 6px; background: repeating-linear-gradient(-45deg, var(--bf-gold) 0 10px, var(--bf-ink) 10px 20px); } }
 

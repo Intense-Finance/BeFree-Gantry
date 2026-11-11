@@ -1,0 +1,57 @@
+// Nucleus paints alert backgrounds and a text color that misses WCAG AA
+// (.alert is #c09853 on #fcf8e3, about 2.5:1). Child headings, strong and
+// links were still the light body color. These rules follow the alert tokens
+// from :root and outrank a box or widget link wrapped around the alert.
+
+@mixin bf-alert-ink($text) {
+	color: $text;
+
+	h1, h2, h3, h4, h5, h6,
+	p, li, strong, b, em, i, .widgettitle, .close {
+		color: $text;
+	}
+
+	a {
+		color: $text;
+		text-decoration: underline;
+	}
+}
+
+.alert,
+.box1 .alert,
+.box2 .alert,
+.box3 .alert,
+.box4 .alert,
+#g-page-surround .widget .alert,
+#g-page-surround .alert {
+	background-color: var(--bf-alert-bg, #fcf8e3);
+	@include bf-alert-ink(var(--bf-alert-text, #816638));
+}
+
+.alert-success,
+.box1 .alert-success,
+.box2 .alert-success,
+#g-page-surround .widget .alert-success {
+	background-color: var(--bf-alert-success-bg, #dff0d8);
+	@include bf-alert-ink(var(--bf-alert-success-text, #396e3a));
+}
+
+.alert-danger,
+.alert-error,
+.box1 .alert-danger,
+.box1 .alert-error,
+.box2 .alert-danger,
+.box2 .alert-error,
+#g-page-surround .widget .alert-danger,
+#g-page-surround .widget .alert-error {
+	background-color: var(--bf-alert-error-bg, #f2dede);
+	@include bf-alert-ink(var(--bf-alert-error-text, #9d3f3d));
+}
+
+.alert-info,
+.box1 .alert-info,
+.box2 .alert-info,
+#g-page-surround .widget .alert-info {
+	background-color: var(--bf-alert-info-bg, #d9edf7);
+	@include bf-alert-ink(var(--bf-alert-info-text, #2d6885));
+}

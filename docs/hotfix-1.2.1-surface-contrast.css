@@ -1,0 +1,214 @@
+/* BeFree Gantry 1.2.1 hotfix for BeFree Navy (preset3), the style on if.finance.
+   Paste into Appearance > Customize > Additional CSS, or Gantry custom CSS.
+   Remove it after updating the theme to 1.2.2. Same backgrounds; text color only.
+   Pairs below are the Navy 1.2.2 values (WCAG AA, 4.5:1 or better). */
+
+:root {
+  --bf-box-bg: #ffffff;
+  --bf-box-text: #595959;
+  --bf-box-link: #0a3a6b;
+  --bf-box2-bg: #e0e0e0;
+  --bf-box2-text: #4a4a4a;
+  --bf-box2-link: #0a3a6b;
+  --bf-box3-bg: #d7c785;
+  --bf-box3-text: #1c1708;
+  --bf-box3-link: #1c1708;
+  --bf-box4-bg: #8fc3ff;
+  --bf-box4-text: #1c1708;
+  --bf-box4-link: #1c1708;
+  --bf-pre-bg: #f6f6f6;
+  --bf-pre-text: #1a2332;
+  --bf-pre-link: #0a3a6b;
+  --bf-pre-code: #237794;
+  --bf-code-bg: #f9f2f4;
+  --bf-code-text: #9c1d3d;
+  --bf-kbd-bg: #f6f6f6;
+  --bf-kbd-text: #1a2332;
+  --bf-alert-bg: #fcf8e3;
+  --bf-alert-text: #816638;
+  --bf-alert-success-bg: #dff0d8;
+  --bf-alert-success-text: #396e3a;
+  --bf-alert-error-bg: #f2dede;
+  --bf-alert-error-text: #9d3f3d;
+  --bf-alert-info-bg: #d9edf7;
+  --bf-alert-info-text: #2d6885;
+  --bf-quote-bg: #0a2344;
+  --bf-quote-text: #e7eef6;
+  --bf-quote-link: #8fc3ff;
+  --bf-table-stripe-bg: rgba(231, 238, 246, 0.08);
+  --bf-table-stripe-text: #e7eef6;
+  --bf-table-head-text: #e7eef6;
+}
+
+pre,
+.wp-block-preformatted,
+.wp-block-code,
+.wp-block-verse {
+  background: var(--bf-pre-bg);
+  color: var(--bf-pre-text);
+}
+pre a,
+.wp-block-preformatted a,
+.wp-block-code a,
+.wp-block-verse a,
+.entry-content pre a,
+#g-page-surround pre a {
+  color: var(--bf-pre-link);
+  text-decoration: underline;
+}
+pre strong, pre b,
+.wp-block-preformatted strong, .wp-block-preformatted b,
+.entry-content pre strong, #g-page-surround pre strong {
+  color: var(--bf-pre-text);
+}
+pre code, .wp-block-code code, .entry-content pre code, #g-page-surround .widget pre code {
+  background: inherit;
+  color: var(--bf-pre-code);
+}
+code, samp {
+  background: var(--bf-code-bg);
+  color: var(--bf-code-text);
+}
+kbd {
+  background: var(--bf-kbd-bg);
+  color: var(--bf-kbd-text);
+  border: 1px solid #c5c5c5;
+  border-radius: 3px;
+  padding: 0.1em 0.4em;
+}
+
+.box1.moduletable, .box1.widget, .box1.g-outer-box, .box1 > .g-content,
+#g-page-surround .widget.box1,
+#g-page-surround .widget.box1 h1, #g-page-surround .widget.box1 h2,
+#g-page-surround .widget.box1 h3, #g-page-surround .widget.box1 h4,
+#g-page-surround .widget.box1 h5, #g-page-surround .widget.box1 h6,
+#g-page-surround .widget.box1 .widgettitle,
+#g-page-surround .widget.box1 strong, #g-page-surround .widget.box1 p,
+#g-page-surround .widget.box1 li,
+#g-page-surround .box1 > .g-content,
+#g-page-surround .box1 > .g-content h1, #g-page-surround .box1 > .g-content h2,
+#g-page-surround .box1 > .g-content h3, #g-page-surround .box1 > .g-content strong,
+#g-page-surround .box1 > .g-content p,
+.box1.g-outer-box, .box1.g-outer-box h1, .box1.g-outer-box h2, .box1.g-outer-box strong, .box1.g-outer-box p {
+  background: var(--bf-box-bg);
+  color: var(--bf-box-text);
+}
+#g-page-surround .widget.box1 a:not(.button),
+#g-page-surround .box1 > .g-content a:not(.button),
+.box1.g-outer-box a:not(.button),
+.box1 > .g-content a:not(.button) {
+  color: var(--bf-box-link);
+  text-decoration: underline;
+}
+
+.box2.moduletable, .box2.widget, .box2.g-outer-box, .box2 > .g-content,
+#g-page-surround .widget.box2,
+#g-page-surround .widget.box2 h1, #g-page-surround .widget.box2 h2,
+#g-page-surround .widget.box2 h3, #g-page-surround .widget.box2 .widgettitle,
+#g-page-surround .widget.box2 strong, #g-page-surround .widget.box2 p,
+#g-page-surround .box2 > .g-content,
+#g-page-surround .box2 > .g-content h1, #g-page-surround .box2 > .g-content h2,
+#g-page-surround .box2 > .g-content strong, #g-page-surround .box2 > .g-content p,
+.box2.g-outer-box, .box2.g-outer-box h1, .box2.g-outer-box h2, .box2.g-outer-box strong, .box2.g-outer-box p {
+  background: var(--bf-box2-bg);
+  color: var(--bf-box2-text);
+}
+#g-page-surround .widget.box2 a:not(.button),
+#g-page-surround .box2 > .g-content a:not(.button),
+.box2 > .g-content a:not(.button) {
+  color: var(--bf-box2-link);
+  text-decoration: underline;
+}
+
+.box3.moduletable, .box3.widget, .box3.g-outer-box, .box3 > .g-content,
+#g-page-surround .widget.box3,
+#g-page-surround .widget.box3 h1, #g-page-surround .widget.box3 h2,
+#g-page-surround .widget.box3 .widgettitle, #g-page-surround .widget.box3 strong,
+#g-page-surround .widget.box3 p, #g-page-surround .box3 > .g-content,
+#g-page-surround .box3 > .g-content h1, #g-page-surround .box3 > .g-content h2,
+#g-page-surround .box3 > .g-content strong, #g-page-surround .box3 > .g-content p {
+  background: var(--bf-box3-bg);
+  color: var(--bf-box3-text);
+}
+#g-page-surround .widget.box3 a:not(.button),
+#g-page-surround .box3 > .g-content a:not(.button),
+.box3 > .g-content a:not(.button) {
+  color: var(--bf-box3-link);
+  text-decoration: underline;
+}
+.box3 .button, .box3 .button:hover { color: #1c1708; }
+
+.box4.moduletable, .box4.widget, .box4.g-outer-box, .box4 > .g-content,
+#g-page-surround .widget.box4,
+#g-page-surround .widget.box4 h1, #g-page-surround .widget.box4 h2,
+#g-page-surround .widget.box4 .widgettitle, #g-page-surround .widget.box4 strong,
+#g-page-surround .widget.box4 p, #g-page-surround .box4 > .g-content,
+#g-page-surround .box4 > .g-content h1, #g-page-surround .box4 > .g-content h2,
+#g-page-surround .box4 > .g-content strong, #g-page-surround .box4 > .g-content p {
+  background: var(--bf-box4-bg);
+  color: var(--bf-box4-text);
+}
+#g-page-surround .widget.box4 a:not(.button),
+#g-page-surround .box4 > .g-content a:not(.button),
+.box4 > .g-content a:not(.button) {
+  color: var(--bf-box4-link);
+  text-decoration: underline;
+}
+.box4 .button, .box4 .button:hover { color: #1c1708; }
+
+.alert, .alert h1, .alert h2, .alert h3, .alert h4, .alert h5, .alert h6,
+.alert p, .alert li, .alert strong, .alert a,
+#g-page-surround .widget .alert, #g-page-surround .widget .alert p,
+#g-page-surround .widget .alert strong, #g-page-surround .widget .alert a,
+#g-page-surround .widget .alert h2 {
+  background-color: var(--bf-alert-bg);
+  color: var(--bf-alert-text);
+}
+.alert a, #g-page-surround .widget .alert a { text-decoration: underline; }
+.alert-success, .alert-success p, .alert-success strong, .alert-success a, .alert-success h4 {
+  background-color: var(--bf-alert-success-bg);
+  color: var(--bf-alert-success-text);
+}
+.alert-danger, .alert-error, .alert-danger p, .alert-error p,
+.alert-danger strong, .alert-error strong, .alert-danger a, .alert-error a, .alert-danger h4, .alert-error h4 {
+  background-color: var(--bf-alert-error-bg);
+  color: var(--bf-alert-error-text);
+}
+.alert-info, .alert-info p, .alert-info strong, .alert-info a, .alert-info h4 {
+  background-color: var(--bf-alert-info-bg);
+  color: var(--bf-alert-info-text);
+}
+
+blockquote, .wp-block-quote, .wp-block-pullquote blockquote,
+blockquote p, .wp-block-quote p, .wp-block-pullquote p, blockquote cite,
+#g-page-surround .widget blockquote, #g-page-surround .widget blockquote p,
+#g-page-surround .widget blockquote strong {
+  background: var(--bf-quote-bg);
+  color: var(--bf-quote-text);
+}
+blockquote a, .wp-block-quote a, .wp-block-pullquote a, .entry-content blockquote a,
+#g-page-surround .widget blockquote a {
+  color: var(--bf-quote-link);
+  text-decoration: underline;
+}
+
+th { color: var(--bf-table-head-text); }
+.wp-block-table.is-style-stripes tbody tr:nth-child(odd),
+.entry-content .wp-block-table.is-style-stripes tbody tr:nth-child(odd),
+.wp-block-table.is-style-stripes tbody tr:nth-child(odd) td,
+.entry-content .wp-block-table.is-style-stripes tbody tr:nth-child(odd) td {
+  background-color: var(--bf-table-stripe-bg);
+  color: var(--bf-table-stripe-text);
+}
+
+input[type="date"], input[type="datetime"], input[type="datetime-local"],
+input[type="month"], input[type="number"], input[type="tel"],
+input[type="time"], input[type="week"], input[type="color"],
+input:not([type]) {
+  color: var(--bf-box-text);
+}
+
+#g-showcase .button, #g-showcase .button:hover, #g-showcase .button:active,
+#g-offcanvas .button, #g-offcanvas .button:hover, #g-offcanvas .button:active {
+  color: #1c1708;
+}

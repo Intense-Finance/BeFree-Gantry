@@ -18,48 +18,57 @@
   }
 }
 
-.box1 {
-  &.moduletable, &.widget, &.g-outer-box,> .g-content {
-    background: $box1-background;
+// Box fills. Text, headings, strong and links use the matching --bf-box* token
+// so a dark preset cannot leave light type on a light box. Button backgrounds
+// are unchanged; only their text color is replaced when it misses 4.5:1.
+$bf-box3-btn: if(lightness($accent-color-1) > 50, darken($accent-color-1, 10%), lighten($accent-color-1, 10%));
+$bf-box3-btn-hover: if(lightness($accent-color-1) > 50, darken($accent-color-1, 15%), lighten($accent-color-1, 15%));
+$bf-box3-btn-ink: if(lightness($accent-color-1) > 50, darken($accent-color-1, 65%), lighten($accent-color-1, 65%));
+$bf-box4-btn: if(lightness($accent-color-2) > 50, darken($accent-color-2, 15%), lighten($accent-color-2, 15%));
+$bf-box4-btn-hover: if(lightness($accent-color-2) > 50, darken($accent-color-2, 10%), lighten($accent-color-2, 10%));
+$bf-box4-btn-ink: if(lightness($accent-color-2) > 50, darken($accent-color-2, 45%), lighten($accent-color-2, 45%));
+
+@mixin bf-box-copy($text, $link) {
+  &, h1, h2, h3, h4, h5, h6, strong, b, em, i, p, li, cite, figcaption, .widgettitle {
+    color: $text;
   }
-  &.moduletable, &.widget, > .g-content {
-    &, h1, h2, h3, h4, h5, h6, strong, i {
-      color: darken($box1-background, 65%);
+  a:not(.button):not(.bf-btn) {
+    color: $link;
+    text-decoration: underline;
+    &:hover, &:focus {
+      color: $link;
     }
+  }
+}
+
+.box1 {
+  &.moduletable, &.widget, &.g-outer-box, > .g-content {
+    background: var(--bf-box-bg, #{$box1-background});
+    color: var(--bf-box-text, #{$box1-text});
+    @include bf-box-copy(var(--bf-box-text, #{$box1-text}), var(--bf-box-link, #{$box-link-fallback}));
   }
 }
 
 .box2 {
   &.moduletable, &.widget, &.g-outer-box, > .g-content {
-    background: $box2-background;
-  }
-  &.moduletable, &.widget, > .g-content {
-    &, h1, h2, h3, h4, h5, h6, strong, i {
-      color: darken($box2-background, 45%);
-    }
+    background: var(--bf-box2-bg, #{$box2-background});
+    color: var(--bf-box2-text, #{$box2-text});
+    @include bf-box-copy(var(--bf-box2-text, #{$box2-text}), var(--bf-box2-link, #{$box-link-fallback}));
   }
 }
 
 .box3 {
-  &.moduletable, &.widget, &.g-outer-box,
-  > .g-content {
-    background: $accent-color-1;
-  }
-  &.moduletable, &.widget, > .g-content {
-    &, h1, h2, h3, h4, h5, h6, strong, i {
-      color: $white;
-    }
-    a {
-      color: lighten($accent-color-1, 35%);
-      &:hover {
-        color: $white;
-      }
-    }
+  &.moduletable, &.widget, &.g-outer-box, > .g-content {
+    background: var(--bf-box3-bg, #{$accent-color-1});
+    color: var(--bf-box3-text);
+    @include bf-box-copy(var(--bf-box3-text), var(--bf-box3-link));
     .button {
-      color: if(lightness($accent-color-1) > 50, darken($accent-color-1, 65%), lighten($accent-color-1, 65%));
-      background: if(lightness($accent-color-1) > 50, darken($accent-color-1, 10%), lighten($accent-color-1, 10%));
+      color: bf-on-preferred($bf-box3-btn, $bf-box3-btn-ink);
+      background: $bf-box3-btn;
+      text-decoration: none;
       &:hover {
-        background: if(lightness($accent-color-1) > 50, darken($accent-color-1, 15%), lighten($accent-color-1, 15%));
+        background: $bf-box3-btn-hover;
+        color: bf-on-preferred($bf-box3-btn-hover, $bf-box3-btn-ink);
       }
     }
   }
@@ -67,23 +76,16 @@
 
 .box4 {
   &.moduletable, &.widget, &.g-outer-box, > .g-content {
-    background: $accent-color-2;
-  }
-  &.moduletable, &.widget, > .g-content {
-    &, h1, h2, h3, h4, h5, h6, strong, i {
-      color: $white;
-    }
-    a {
-      color: lighten($accent-color-2, 35%);
-      &:hover {
-        color: $white;
-      }
-    }
+    background: var(--bf-box4-bg, #{$accent-color-2});
+    color: var(--bf-box4-text);
+    @include bf-box-copy(var(--bf-box4-text), var(--bf-box4-link));
     .button {
-      color: if(lightness($accent-color-2) > 50, darken($accent-color-2, 45%), lighten($accent-color-2, 45%));
-      background: if(lightness($accent-color-2) > 50, darken($accent-color-2, 15%), lighten($accent-color-2, 15%));
+      color: bf-on-preferred($bf-box4-btn, $bf-box4-btn-ink);
+      background: $bf-box4-btn;
+      text-decoration: none;
       &:hover {
-        background: if(lightness($accent-color-2) > 50, darken($accent-color-2, 10%), lighten($accent-color-2, 10%));
+        background: $bf-box4-btn-hover;
+        color: bf-on-preferred($bf-box4-btn-hover, $bf-box4-btn-ink);
       }
     }
   }

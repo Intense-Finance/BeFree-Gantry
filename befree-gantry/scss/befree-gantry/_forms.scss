@@ -1,5 +1,6 @@
 textarea, select[multiple=multiple] {
 	background-color: white;
+	color: var(--bf-box-text, #{$box1-text});
 	border: 1px solid $base-border-color;
 	box-shadow: $base-box-shadow;
 
@@ -14,6 +15,7 @@ textarea, select[multiple=multiple] {
 
 #{$all-text-inputs} {
 	background-color: white;
+	color: var(--bf-box-text, #{$box1-text});
 	border: 1px solid $base-border-color;
 	box-shadow: $base-box-shadow;
 }
