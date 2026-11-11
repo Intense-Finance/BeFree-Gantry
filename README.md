@@ -4,7 +4,7 @@ Made by Intense Finance (https://if.finance)
 
 A dark, industrial **Gantry 5** theme for WordPress. It blends the **BeFree** look (navy, gold, Barlow Condensed, chamfered "industrial" cards) with the **if.finance** neon palette (lime "live" accents and cyan links).
 
-* Version: **1.1.1**
+* Version: **1.2.2**
 * Requires: WordPress 6.0+ and the free **[Gantry 5 Framework](https://gantry.org/) plugin**
 * Gantry 5 framework: **minimum 5.5**, **recommended 5.6.5** (WordPress.org plugin, 19 October 2026). See [Gantry 5.6.5](#gantry-565).
 * PHP: **8.1+** with Gantry 5.5.25 and 5.6.x (the 5.6.5 plugin declares `Requires PHP: 8.1.0`). Gantry 5.5.0 itself allowed PHP 5.6.20.
@@ -22,7 +22,7 @@ A dark, industrial **Gantry 5** theme for WordPress. It blends the **BeFree** lo
 ## Install
 
 1. Install and activate the **Gantry 5 Framework** plugin, recommended version **5.6.5**. Update it from **Plugins** in WordPress, or install it from [wordpress.org/plugins/gantry5](https://wordpress.org/plugins/gantry5/). The theme also runs on Gantry 5.5 or newer. BeFree Gantry does not work without the plugin, and it does not bundle Nucleus.
-2. Download `befree-gantry-1.1.1.zip` from the GitHub release and check its SHA-256 against `befree-gantry-1.1.1.zip.sha256`.
+2. Download `befree-gantry-1.2.2.zip` from the GitHub release and check its SHA-256 against `befree-gantry-1.2.2.zip.sha256`.
 3. In WordPress, go to **Appearance > Themes > Add New > Upload Theme**, pick the zip, then click **Install Now** and **Activate**.
 4. Open **Gantry 5 > BeFree Gantry** to choose a style preset, layout and particles.
 5. Optional: assign your menu in **Gantry 5 > Menu** or in the Menu particle, and add widgets to the `slideshow`, `sidebar`, `aside`, `feature-1/2/3`, `subfeature` and `footer` positions.
@@ -165,7 +165,7 @@ These were rendered on WordPress (latest, SQLite integration), Gantry 5.6.4 and 
 
 ## Screenshots
 
-BeFree Gantry 1.2.1 with the BeFree Navy style, on the [iw.je](https://iw.je) test site.
+BeFree Gantry 1.2.2 with the BeFree Navy style, on the [iw.je](https://iw.je) test site.
 
 | **Home, desktop 1440 px** | **Menu dropdown** |
 | --- | --- |
