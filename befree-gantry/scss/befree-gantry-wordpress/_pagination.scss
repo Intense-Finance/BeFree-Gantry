@@ -9,7 +9,13 @@
     .page-numbers, .prev, .next {
         padding: 0.3rem 1rem;
         background: var(--bf-card);
+        color: var(--bf-text);
         border: 1px solid var(--bf-line);
         border-radius: $core-border-radius;
+    }
+
+    a.page-numbers, a.prev, a.next {
+        color: var(--bf-link);
+        &:hover { color: var(--bf-live); }
     }
 }

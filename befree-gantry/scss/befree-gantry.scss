@@ -78,5 +78,8 @@
 @import "befree-gantry/sister";
 @import "befree-gantry/wide";
 
-// Readable text defaults (keep last)
+// Readable text defaults
 @import "befree-gantry/readable";
+
+// Surface contrast (keep last): beats later heading and link colors on light fills
+@import "befree-gantry/surfaces";

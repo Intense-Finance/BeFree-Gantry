@@ -1,13 +1,31 @@
 table {
 	border: 1px solid lighten($base-border-color,5%);
+	color: var(--bf-text);
 }
 
 th {
-	background: lighten($base-border-color,10%);
+	background: var(--bf-table-head-bg, #{lighten($base-border-color, 10%)});
+	color: var(--bf-table-head-text, var(--bf-text));
 	padding: 0.5rem;
 }
 
 td {
 	padding: 0.5rem;
-	border: 1px solid lighten($base-border-color,5%); 
+	border: 1px solid lighten($base-border-color,5%);
+	color: var(--bf-text);
+}
+
+// WordPress striped tables paint #f0f0f0 and do not set a text color.
+// A tint of the body text keeps the row on the preset and readable.
+.wp-block-table.is-style-stripes tbody tr:nth-child(odd),
+.entry-content .wp-block-table.is-style-stripes tbody tr:nth-child(odd),
+#g-page-surround .wp-block-table.is-style-stripes tbody tr:nth-child(odd) {
+	background-color: var(--bf-table-stripe-bg);
+	color: var(--bf-table-stripe-text, var(--bf-text));
+}
+
+.wp-block-table.is-style-stripes tbody tr:nth-child(odd) td,
+.entry-content .wp-block-table.is-style-stripes tbody tr:nth-child(odd) td,
+#g-page-surround .wp-block-table.is-style-stripes tbody tr:nth-child(odd) td {
+	color: var(--bf-table-stripe-text, var(--bf-text));
 }

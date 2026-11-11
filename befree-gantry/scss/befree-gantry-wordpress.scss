@@ -24,8 +24,10 @@ $output-bourbon-deprecation-warnings: false;
 //-------------------------------------------
 
 // WORDPRESS THEME SPECIFIC
+@import "mixins/contrast";
 @import "befree-gantry-wordpress/core";
 @import "befree-gantry-wordpress/pagination";
 @import "befree-gantry-wordpress/comments";
+@import "befree-gantry-wordpress/alerts";
 
 //-------------------------------------------

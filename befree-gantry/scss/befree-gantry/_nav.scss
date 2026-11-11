@@ -22,11 +22,12 @@
             background: darken($navigation-background, 6%);
             border: none;
             text-decoration: none;
-            color: $navigation-text-color;
+            color: bf-on-preferred(darken($navigation-background, 6%), $navigation-text-color);
             transition: background 0.2s;
 
             &:hover {
                 background: lighten($navigation-background, 6%);
+                color: bf-on-preferred(lighten($navigation-background, 6%), $navigation-text-color);
             }
         }
     }

@@ -86,6 +86,7 @@
 	}
 	.info-box {
 		background: darken($main-background, 4%);
+		color: bf-on-preferred(darken($main-background, 4%), $main-text-color);
 		border: 1px solid darken($main-background, 10%);
 		padding: $content-padding;
 		border-radius: $core-border-radius;

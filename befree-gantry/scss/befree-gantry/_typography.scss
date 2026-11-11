@@ -20,38 +20,58 @@ bold, strong {
 	font-weight: $font-weight-medium;
 }
 
-// Blockquote
+// Blockquote. The panel background is set with the quote tokens in _meld.scss.
+// Color is set here too so a paragraph cannot inherit a light body color.
 blockquote {
 	border-left: 10px solid $rule-color;
+	color: var(--bf-quote-text, #{$base-text-color});
 	p {
 		font-size: $core-font-size + 0.1;
-		color: lighten($base-text-color, 20%);
+		color: var(--bf-quote-text, #{$base-text-color});
 	}
 	cite {
 		display: block;
 		text-align: right;
-		color: $base-text-color;
+		color: var(--bf-quote-text, #{$base-text-color});
 		font-size: $core-font-size + 0.2;
 	}
 }
 
-// Inline and Code
+// Inline and Code. Every light fill sets its own text color.
 code {
-	background: $code-bg;
-	color: darken($code-text,10%);
+	background: var(--bf-code-bg, $code-bg);
+	color: var(--bf-code-text, $code-ink);
 }
 
-pre {
+kbd {
+	background: var(--bf-kbd-bg, $pre-bg);
+	color: var(--bf-kbd-text, $pre-ink);
+	border: 1px solid var(--bf-kbd-border, $kbd-border);
+	border-radius: 3px;
+	padding: 0.1em 0.4em;
+	font-size: 0.9em;
+}
+
+samp {
+	background: var(--bf-code-bg, $code-bg);
+	color: var(--bf-code-text, $code-ink);
+}
+
+pre,
+.wp-block-preformatted,
+.wp-block-code,
+.wp-block-verse {
 	padding: 1rem;
 	margin: 2rem 0;
-	background: $pre-bg;
+	background: var(--bf-pre-bg, $pre-bg);
+	color: var(--bf-pre-text, $pre-ink);
 	border: 1px solid $base-border-color;
 	border-radius: $core-border-radius;
 	line-height: 1.15;
 	font-size: $core-font-size - 0.1;
 
 	code {
-		color: $pre-text;
+		color: var(--bf-pre-code, $pre-text);
 		background: inherit;
 		font-size: $core-font-size - 0.1;
 	}

@@ -1,0 +1,384 @@
+// Loaded last. Heading, strong and link colors from _meld.scss are more
+// specific than a bare `pre` or `.box1` once an id is involved
+// (#g-page-surround .widget h2 / a, .entry-content a). These rules put the
+// surface color back, including on WordPress blocks.
+
+pre a,
+.wp-block-preformatted a,
+.wp-block-code a,
+.wp-block-verse a,
+.entry-content pre a,
+.entry-content .wp-block-preformatted a,
+.entry-content .wp-block-code a,
+.entry-content .wp-block-verse a,
+#g-page-surround pre a,
+#g-page-surround .wp-block-preformatted a,
+#g-page-surround .wp-block-code a,
+#g-page-surround .wp-block-verse a {
+	color: var(--bf-pre-link, #0a3a6b);
+	text-decoration: underline;
+}
+
+pre strong,
+pre b,
+.wp-block-preformatted strong,
+.wp-block-preformatted b,
+.wp-block-code strong,
+.wp-block-code b,
+.entry-content pre strong,
+.entry-content pre b,
+#g-page-surround pre strong,
+#g-page-surround pre b,
+.box1 pre,
+.box1 pre strong,
+.box1 pre b,
+.box1 .wp-block-preformatted,
+.box1 .wp-block-preformatted strong,
+.box2 pre,
+.box2 pre strong,
+.box2 .wp-block-preformatted,
+.box3 pre,
+.box3 pre strong,
+.box3 .wp-block-preformatted,
+.box4 pre,
+.box4 pre strong,
+.box4 .wp-block-preformatted,
+#g-page-surround .widget.box1 pre,
+#g-page-surround .widget.box1 pre strong,
+#g-page-surround .widget.box1 .wp-block-preformatted,
+#g-page-surround .widget.box2 pre,
+#g-page-surround .widget.box2 pre strong,
+#g-page-surround .widget.box3 pre,
+#g-page-surround .widget.box3 pre strong,
+#g-page-surround .widget.box4 pre,
+#g-page-surround .widget.box4 pre strong,
+#g-page-surround .box1 > .g-content pre,
+#g-page-surround .box1 > .g-content pre strong,
+#g-page-surround .box2 > .g-content pre,
+#g-page-surround .box2 > .g-content pre strong,
+#g-page-surround .box3 > .g-content pre,
+#g-page-surround .box3 > .g-content pre strong,
+#g-page-surround .box4 > .g-content pre,
+#g-page-surround .box4 > .g-content pre strong {
+	color: var(--bf-pre-text, #1a2332);
+}
+
+.box1 pre a,
+.box2 pre a,
+.box3 pre a,
+.box4 pre a,
+#g-page-surround .widget.box1 pre a,
+#g-page-surround .widget.box2 pre a,
+#g-page-surround .widget.box3 pre a,
+#g-page-surround .widget.box4 pre a,
+#g-page-surround .box1 > .g-content pre a,
+#g-page-surround .box2 > .g-content pre a,
+#g-page-surround .box3 > .g-content pre a,
+#g-page-surround .box4 > .g-content pre a {
+	color: var(--bf-pre-link, #0a3a6b);
+	text-decoration: underline;
+}
+
+// Inline code only. pre > code keeps the teal token below (a bare `code`
+// rule would repaint code blocks pink).
+:not(pre) > code,
+h1 code, h2 code, h3 code, h4 code, h5 code, h6 code,
+#g-page-surround .widget h1 code,
+#g-page-surround .widget h2 code,
+#g-page-surround .widget h3 code {
+	background: var(--bf-code-bg, #f9f2f4);
+	color: var(--bf-code-text, #9c1d3d);
+}
+
+:not(pre) > kbd,
+h1 kbd, h2 kbd, h3 kbd, h4 kbd, h5 kbd, h6 kbd,
+#g-page-surround .widget kbd {
+	background: var(--bf-kbd-bg, #f6f6f6);
+	color: var(--bf-kbd-text, #1a2332);
+	border-color: var(--bf-kbd-border, #c5c5c5);
+}
+
+:not(pre) > samp {
+	background: var(--bf-code-bg, #f9f2f4);
+	color: var(--bf-code-text, #9c1d3d);
+}
+
+pre code,
+.wp-block-code code,
+.wp-block-preformatted code,
+.entry-content pre code,
+#g-page-surround pre code,
+#g-page-surround .widget pre code {
+	background: inherit;
+	color: var(--bf-pre-code, #237794);
+}
+
+// Widget titles and widget links use an id. Match that so box text wins.
+#g-page-surround .widget.box1,
+#g-page-surround .widget.box1 h1,
+#g-page-surround .widget.box1 h2,
+#g-page-surround .widget.box1 h3,
+#g-page-surround .widget.box1 h4,
+#g-page-surround .widget.box1 h5,
+#g-page-surround .widget.box1 h6,
+#g-page-surround .widget.box1 .widgettitle,
+#g-page-surround .widget.box1 strong,
+#g-page-surround .widget.box1 b,
+#g-page-surround .widget.box1 p,
+#g-page-surround .widget.box1 li,
+#g-page-surround .box1 > .g-content,
+#g-page-surround .box1 > .g-content h1,
+#g-page-surround .box1 > .g-content h2,
+#g-page-surround .box1 > .g-content h3,
+#g-page-surround .box1 > .g-content h4,
+#g-page-surround .box1 > .g-content h5,
+#g-page-surround .box1 > .g-content h6,
+#g-page-surround .box1 > .g-content strong,
+#g-page-surround .box1 > .g-content p,
+#g-page-surround .box1 > .g-content li,
+.box1.g-outer-box,
+.box1.g-outer-box h1,
+.box1.g-outer-box h2,
+.box1.g-outer-box h3,
+.box1.g-outer-box strong,
+.box1.g-outer-box p {
+	color: var(--bf-box-text, #595959);
+}
+
+#g-page-surround .widget.box1 a:not(.button):not(.bf-btn),
+#g-page-surround .box1 > .g-content a:not(.button):not(.bf-btn),
+.box1.g-outer-box a:not(.button):not(.bf-btn) {
+	color: var(--bf-box-link, #0a3a6b);
+	text-decoration: underline;
+}
+
+#g-page-surround .widget.box2,
+#g-page-surround .widget.box2 h1,
+#g-page-surround .widget.box2 h2,
+#g-page-surround .widget.box2 h3,
+#g-page-surround .widget.box2 h4,
+#g-page-surround .widget.box2 h5,
+#g-page-surround .widget.box2 h6,
+#g-page-surround .widget.box2 .widgettitle,
+#g-page-surround .widget.box2 strong,
+#g-page-surround .widget.box2 b,
+#g-page-surround .widget.box2 p,
+#g-page-surround .widget.box2 li,
+#g-page-surround .box2 > .g-content,
+#g-page-surround .box2 > .g-content h1,
+#g-page-surround .box2 > .g-content h2,
+#g-page-surround .box2 > .g-content h3,
+#g-page-surround .box2 > .g-content h4,
+#g-page-surround .box2 > .g-content h5,
+#g-page-surround .box2 > .g-content h6,
+#g-page-surround .box2 > .g-content strong,
+#g-page-surround .box2 > .g-content p,
+#g-page-surround .box2 > .g-content li,
+.box2.g-outer-box,
+.box2.g-outer-box h1,
+.box2.g-outer-box h2,
+.box2.g-outer-box h3,
+.box2.g-outer-box strong,
+.box2.g-outer-box p {
+	color: var(--bf-box2-text, #4a4a4a);
+}
+
+#g-page-surround .widget.box2 a:not(.button):not(.bf-btn),
+#g-page-surround .box2 > .g-content a:not(.button):not(.bf-btn),
+.box2.g-outer-box a:not(.button):not(.bf-btn) {
+	color: var(--bf-box2-link, #0a3a6b);
+	text-decoration: underline;
+}
+
+#g-page-surround .widget.box3,
+#g-page-surround .widget.box3 h1,
+#g-page-surround .widget.box3 h2,
+#g-page-surround .widget.box3 h3,
+#g-page-surround .widget.box3 h4,
+#g-page-surround .widget.box3 h5,
+#g-page-surround .widget.box3 h6,
+#g-page-surround .widget.box3 .widgettitle,
+#g-page-surround .widget.box3 strong,
+#g-page-surround .widget.box3 p,
+#g-page-surround .widget.box3 li,
+#g-page-surround .box3 > .g-content,
+#g-page-surround .box3 > .g-content h1,
+#g-page-surround .box3 > .g-content h2,
+#g-page-surround .box3 > .g-content h3,
+#g-page-surround .box3 > .g-content h4,
+#g-page-surround .box3 > .g-content h5,
+#g-page-surround .box3 > .g-content h6,
+#g-page-surround .box3 > .g-content strong,
+#g-page-surround .box3 > .g-content p,
+#g-page-surround .box3 > .g-content li,
+.box3.g-outer-box,
+.box3.g-outer-box h1,
+.box3.g-outer-box h2,
+.box3.g-outer-box strong,
+.box3.g-outer-box p {
+	color: var(--bf-box3-text, #1c1708);
+}
+
+#g-page-surround .widget.box3 a:not(.button):not(.bf-btn),
+#g-page-surround .box3 > .g-content a:not(.button):not(.bf-btn),
+.box3.g-outer-box a:not(.button):not(.bf-btn) {
+	color: var(--bf-box3-link, #1c1708);
+	text-decoration: underline;
+}
+
+#g-page-surround .widget.box4,
+#g-page-surround .widget.box4 h1,
+#g-page-surround .widget.box4 h2,
+#g-page-surround .widget.box4 h3,
+#g-page-surround .widget.box4 h4,
+#g-page-surround .widget.box4 h5,
+#g-page-surround .widget.box4 h6,
+#g-page-surround .widget.box4 .widgettitle,
+#g-page-surround .widget.box4 strong,
+#g-page-surround .widget.box4 p,
+#g-page-surround .widget.box4 li,
+#g-page-surround .box4 > .g-content,
+#g-page-surround .box4 > .g-content h1,
+#g-page-surround .box4 > .g-content h2,
+#g-page-surround .box4 > .g-content h3,
+#g-page-surround .box4 > .g-content h4,
+#g-page-surround .box4 > .g-content h5,
+#g-page-surround .box4 > .g-content h6,
+#g-page-surround .box4 > .g-content strong,
+#g-page-surround .box4 > .g-content p,
+#g-page-surround .box4 > .g-content li,
+.box4.g-outer-box,
+.box4.g-outer-box h1,
+.box4.g-outer-box h2,
+.box4.g-outer-box strong,
+.box4.g-outer-box p {
+	color: var(--bf-box4-text, #1c1708);
+}
+
+#g-page-surround .widget.box4 a:not(.button):not(.bf-btn),
+#g-page-surround .box4 > .g-content a:not(.button):not(.bf-btn),
+.box4.g-outer-box a:not(.button):not(.bf-btn) {
+	color: var(--bf-box4-link, #1c1708);
+	text-decoration: underline;
+}
+
+// Quotes. lighten() of an already-light body color compiled to white, and
+// only .entry-content blockquote had a background. Every quote now uses the pair.
+blockquote,
+.wp-block-quote,
+.wp-block-pullquote blockquote,
+.wp-block-pullquote.is-style-solid-color,
+.wp-block-pullquote.is-style-solid-color blockquote {
+	background: var(--bf-quote-bg, #0a2344);
+	color: var(--bf-quote-text, #e7eef6);
+	border: 1px solid var(--bf-line, #2a3a4e);
+	border-left: 3px solid var(--bf-link, #8fc3ff);
+	border-radius: var(--bf-radius, 14px);
+	padding: 18px 20px;
+}
+
+blockquote p,
+blockquote li,
+blockquote cite,
+blockquote h1,
+blockquote h2,
+blockquote h3,
+blockquote h4,
+blockquote h5,
+blockquote h6,
+blockquote strong,
+.wp-block-quote p,
+.wp-block-pullquote p,
+.wp-block-pullquote cite,
+#g-page-surround .widget blockquote,
+#g-page-surround .widget blockquote p,
+#g-page-surround .widget blockquote h2,
+#g-page-surround .widget blockquote strong {
+	color: var(--bf-quote-text, #e7eef6);
+}
+
+blockquote a,
+.wp-block-quote a,
+.wp-block-pullquote a,
+.entry-content blockquote a,
+#g-page-surround .widget blockquote a,
+#g-page-surround blockquote a {
+	color: var(--bf-quote-link, #8fc3ff);
+	text-decoration: underline;
+}
+
+// Navy panel / card variations. On light presets, headings were still --bf-text (dark) on the navy fill.
+#g-page-surround .bf-navy > .g-content,
+#g-page-surround .bf-navy > .g-content h1,
+#g-page-surround .bf-navy > .g-content h2,
+#g-page-surround .bf-navy > .g-content h3,
+#g-page-surround .bf-navy > .g-content h4,
+#g-page-surround .bf-navy > .g-content h5,
+#g-page-surround .bf-navy > .g-content h6,
+#g-page-surround .bf-navy > .g-content .widgettitle,
+#g-page-surround .bf-navy > .g-content strong,
+#g-page-surround .bf-navy > .g-content p,
+#g-page-surround .bf-navy > .g-content li,
+.g-content.bf-navy,
+.g-content.bf-navy h1,
+.g-content.bf-navy h2,
+.g-content.bf-navy h3,
+.g-content.bf-navy strong,
+.g-content.bf-navy p,
+.bf-panel,
+.bf-panel h1,
+.bf-panel h2,
+.bf-panel h3,
+.bf-panel h4,
+.bf-panel h5,
+.bf-panel h6,
+.bf-panel strong,
+.bf-panel p,
+.bf-panel li {
+	color: var(--bf-panel-text, #e7eef6);
+}
+
+#g-page-surround .bf-navy > .g-content a:not(.button):not(.bf-btn),
+.g-content.bf-navy a:not(.button):not(.bf-btn),
+.bf-panel a {
+	color: var(--bf-panel-link, #8fc3ff);
+	text-decoration: underline;
+}
+
+/* A quote inside a box keeps the quote pair. The box `p` / `strong` rules are
+   otherwise specific enough to paint dark type on the navy quote fill. */
+#g-page-surround .widget.box1 blockquote,
+#g-page-surround .widget.box1 blockquote p,
+#g-page-surround .widget.box1 blockquote strong,
+#g-page-surround .widget.box2 blockquote,
+#g-page-surround .widget.box2 blockquote p,
+#g-page-surround .widget.box2 blockquote strong,
+#g-page-surround .widget.box3 blockquote,
+#g-page-surround .widget.box3 blockquote p,
+#g-page-surround .widget.box3 blockquote strong,
+#g-page-surround .widget.box4 blockquote,
+#g-page-surround .widget.box4 blockquote p,
+#g-page-surround .widget.box4 blockquote strong,
+#g-page-surround .box1 > .g-content blockquote,
+#g-page-surround .box1 > .g-content blockquote p,
+#g-page-surround .box2 > .g-content blockquote,
+#g-page-surround .box2 > .g-content blockquote p,
+#g-page-surround .box3 > .g-content blockquote,
+#g-page-surround .box3 > .g-content blockquote p,
+#g-page-surround .box4 > .g-content blockquote,
+#g-page-surround .box4 > .g-content blockquote p {
+	background: var(--bf-quote-bg, #0a2344);
+	color: var(--bf-quote-text, #e7eef6);
+}
+
+#g-page-surround .widget.box1 blockquote a,
+#g-page-surround .widget.box2 blockquote a,
+#g-page-surround .widget.box3 blockquote a,
+#g-page-surround .widget.box4 blockquote a,
+#g-page-surround .box1 > .g-content blockquote a,
+#g-page-surround .box2 > .g-content blockquote a,
+#g-page-surround .box3 > .g-content blockquote a,
+#g-page-surround .box4 > .g-content blockquote a {
+	color: var(--bf-quote-link, #8fc3ff);
+	text-decoration: underline;
+}

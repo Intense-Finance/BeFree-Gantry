@@ -7,9 +7,9 @@
 	color: var(--bf-showcase-text);
 
 	a {
-		color: lighten($showcase-background, 50%);
+		color: bf-on-preferred($showcase-background, lighten($showcase-background, 50%));
 		&:hover {
-			color: $showcase-text-color;
+			color: bf-on-preferred($showcase-background, $showcase-text-color);
 		}
 	}
 
@@ -19,12 +19,14 @@
 
 	.button {
 		background: $accent-color-2;
-		color: $showcase-text-color;
+		color: bf-on-preferred($accent-color-2, $showcase-text-color);
 		&:hover {
 			background: lighten($accent-color-2, 5%);
+			color: bf-on-preferred(lighten($accent-color-2, 5%), $showcase-text-color);
 		}
 		&:active {
 			background: darken($accent-color-2, 5%);
+			color: bf-on-preferred(darken($accent-color-2, 5%), $showcase-text-color);
 		}
 	}
 
@@ -32,10 +34,11 @@
 		a {
 			background: darken($showcase-background, 6%);
 			border: none;
-			color: $showcase-text-color;
+			color: bf-on-preferred(darken($showcase-background, 6%), $showcase-text-color);
 			transition: background 0.2s;
 			&:hover {
 				background: lighten($showcase-background, 6%);
+				color: bf-on-preferred(lighten($showcase-background, 6%), $showcase-text-color);
 			}
 		}
 	}

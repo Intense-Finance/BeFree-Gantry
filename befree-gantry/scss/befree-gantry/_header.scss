@@ -5,9 +5,9 @@
 	z-index: 3;
 
 	a {
-		color: lighten($header-background, 40%);
+		color: bf-on-preferred($header-background, $header-text-color);
 		&:hover {
-			color: $header-text-color;
+			color: bf-on-preferred($header-background, $accent-color-2);
 		}
 	}
 
