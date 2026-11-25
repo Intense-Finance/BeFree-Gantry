@@ -2,6 +2,12 @@
 
 All notable changes to BeFree Gantry are documented here. This project uses [Semantic Versioning](https://semver.org/).
 
+## [Unreleased]
+
+### Changed
+- Theme header `Tested up to` is now WordPress **7.1**. Confirmed on WordPress **7.1.5** at if.finance, where theme 1.2.1 is running. The theme version is unchanged.
+- README: the Gantry 5 plugin lists WordPress tested up to **7.1.5** (was 7.1.4).
+
 ## [1.2.2] - 2026-11-11
 
 ### Fixed

@@ -139,7 +139,7 @@ Chart embeds are left as they are. The **only** CSS rule that touches them recol
 
 Recommended framework version is **5.6.5** for WordPress. It was published to the [WordPress.org plugin directory](https://wordpress.org/plugins/gantry5/) on 19 October 2026 (changelog date 15 October 2026). The [gantry/gantry5](https://github.com/gantry/gantry5) GitHub tags still stop at 5.6.0, and [gantry.org/downloads](https://gantry.org/downloads) was still offering the 5.6.4 packages when this theme was checked on 4 November 2026. Install or update the plugin from WordPress itself.
 
-5.6.5 is compatible with this theme. The changes are in the framework plugin, not in theme templates or SCSS. The theme floor stays Gantry 5.5. The plugin still requires PHP 8.1.0 and lists WordPress tested up to 7.1.4.
+5.6.5 is compatible with this theme. The changes are in the framework plugin, not in theme templates or SCSS. The theme floor stays Gantry 5.5. The plugin still requires PHP 8.1.0 and lists WordPress tested up to 7.1.5.
 
 From the WordPress.org changelog for 5.6.5:
 
