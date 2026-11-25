@@ -6,8 +6,8 @@ A dark, industrial **Gantry 5** theme for WordPress. It blends the **BeFree** lo
 
 * Version: **1.2.2**
 * Requires: WordPress 6.0+ and the free **[Gantry 5 Framework](https://gantry.org/) plugin**
-* Gantry 5 framework: **minimum 5.5**, **recommended 5.6.5** (WordPress.org plugin, 19 October 2026). See [Gantry 5.6.5](#gantry-565).
-* PHP: **8.1+** with Gantry 5.5.25 and 5.6.x (the 5.6.5 plugin declares `Requires PHP: 8.1.0`). Gantry 5.5.0 itself allowed PHP 5.6.20.
+* Gantry 5 framework: **minimum 5.5**, **recommended 5.6.7** (WordPress.org plugin, 4 November 2026). See [Gantry 5.6.7](#gantry-567).
+* PHP: **8.1+** with Gantry 5.5.25 and 5.6.x (the 5.6.7 plugin declares `Requires PHP: 8.1.0`). Gantry 5.5.0 itself allowed PHP 5.6.20.
 * License: **GNU GPL v3 or later** (see [License](#license))
 * Read the launch story on if.finance: [BeFree Gantry: a dark, industrial WordPress theme](https://if.finance/befree-gantry-wordpress-theme/)
 
@@ -21,7 +21,7 @@ A dark, industrial **Gantry 5** theme for WordPress. It blends the **BeFree** lo
 
 ## Install
 
-1. Install and activate the **Gantry 5 Framework** plugin, recommended version **5.6.5**. Update it from **Plugins** in WordPress, or install it from [wordpress.org/plugins/gantry5](https://wordpress.org/plugins/gantry5/). The theme also runs on Gantry 5.5 or newer. BeFree Gantry does not work without the plugin, and it does not bundle Nucleus.
+1. Install and activate the **Gantry 5 Framework** plugin, recommended version **5.6.7**. Update it from **Plugins** in WordPress, or install it from [wordpress.org/plugins/gantry5](https://wordpress.org/plugins/gantry5/). The theme also runs on Gantry 5.5 or newer. BeFree Gantry does not work without the plugin, and it does not bundle Nucleus.
 2. Download `befree-gantry-1.2.2.zip` from the GitHub release and check its SHA-256 against `befree-gantry-1.2.2.zip.sha256`.
 3. In WordPress, go to **Appearance > Themes > Add New > Upload Theme**, pick the zip, then click **Install Now** and **Activate**.
 4. Open **Gantry 5 > BeFree Gantry** to choose a style preset, layout and particles.
@@ -135,13 +135,26 @@ WOFF2 works in every current browser. No EOT, TTF or SVG fallbacks are included.
 
 Chart embeds are left as they are. The **only** CSS rule that touches them recolors the `.tradingview-widget-copyright` link to the footer text color (the live accent on hover). Custom HTML and Block widgets, where charts usually live, get no added padding, clipping or chamfers, so chart widths and heights stay as embedded.
 
-## Gantry 5.6.5
+## Gantry 5.6.7
 
-Recommended framework version is **5.6.5** for WordPress. It was published to the [WordPress.org plugin directory](https://wordpress.org/plugins/gantry5/) on 19 October 2026 (changelog date 15 October 2026). The [gantry/gantry5](https://github.com/gantry/gantry5) GitHub tags still stop at 5.6.0, and [gantry.org/downloads](https://gantry.org/downloads) was still offering the 5.6.4 packages when this theme was checked on 4 November 2026. Install or update the plugin from WordPress itself.
+Recommended framework version is **5.6.7** for WordPress. It was published to the [WordPress.org plugin directory](https://wordpress.org/plugins/gantry5/) on 4 November 2026. The [gantry/gantry5](https://github.com/gantry/gantry5) GitHub tags still stop at 5.6.0, and [gantry.org/downloads](https://gantry.org/downloads) was still offering the 5.6.4 packages when this theme was checked on 4 November 2026. Install or update the plugin from WordPress itself.
 
-5.6.5 is compatible with this theme. The changes are in the framework plugin, not in theme templates or SCSS. The theme floor stays Gantry 5.5. The plugin still requires PHP 8.1.0 and lists WordPress tested up to 7.1.5.
+5.6.7 is compatible with this theme. The changes are in the framework plugin, not in theme templates or SCSS. The theme floor stays Gantry 5.5. The plugin still requires PHP 8.1.0 and lists WordPress tested up to 7.1.5.
 
-From the WordPress.org changelog for 5.6.5:
+From the WordPress.org changelog:
+
+**5.6.7** (4 November 2026)
+
+* Fixed a fatal error on some platforms when checking whether detailed error pages may be shown.
+
+**5.6.6** (4 November 2026)
+
+* **Security.** Hardened permission checks and input handling in the admin file picker.
+* **Security.** Hardened validation of archive contents during outline import.
+* File picker uploads are now limited to images, SVG, fonts and common video formats, with file type verification.
+* File picker paths are limited to the site’s media and image folders.
+
+**5.6.5** (changelog date 15 October 2026, published 19 October 2026)
 
 * **Security.** An unauthenticated particle AJAX request with an invalid outline could show the detailed debug error page, including environment, cookie, session and POST data. The debug page is now limited to debug mode or administrators, the handler checks the outline, and secret values are masked. Patchstack records this as CVE-2026-110889 for versions through 5.6.4.
 * **Security.** Invalid particle AJAX requests return HTTP 404 with a JSON content type. Detailed error pages are not shown to logged-out visitors, including when debug mode is on.
