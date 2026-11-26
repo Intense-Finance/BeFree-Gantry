@@ -4,10 +4,12 @@ All notable changes to BeFree Gantry are documented here. This project uses [Sem
 
 ## [Unreleased]
 
+## [1.2.3] - 2026-11-26
+
 ### Changed
-- Theme header `Tested up to` is now WordPress **7.1**. Confirmed on WordPress **7.1.5** at if.finance, where theme 1.2.1 is running. The theme version is unchanged.
+- Theme header `Tested up to` is now WordPress **7.1**. Confirmed on WordPress **7.1.5** at if.finance, where theme 1.2.1 is running.
 - README: the Gantry 5 plugin lists WordPress tested up to **7.1.5** (was 7.1.4).
-- Recommended Gantry 5 framework version is now **5.6.7** (was 5.6.5). Confirmed current on WordPress.org, 4 November 2026. The theme version is unchanged. The runtime floor stays Gantry 5.5.
+- Recommended Gantry 5 framework version is now **5.6.7** (was 5.6.5). Confirmed current on WordPress.org, 4 November 2026. The runtime floor stays Gantry 5.5.
 
 ## [1.2.2] - 2026-11-11
 
